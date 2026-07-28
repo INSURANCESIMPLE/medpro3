@@ -1,0 +1,6 @@
+{
+  "name": "Medicare Professor",
+  "description": "Mobile-responsive Medicare guidance, plan calculator, and resource hub with direct integration to Insurance Simplified.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
