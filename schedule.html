@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule an Appointment | The Medicare Professor</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 0; }
+        .schedule-container { max-width: 1000px; margin: 60px auto; padding: 20px; text-align: center; }
+        
+        /* Using a trustworthy "Medicare Blue" */
+        .schedule-container h1 { color: #0033A0; font-size: 2.6em; margin-bottom: 10px; font-weight: bold; }
+        .schedule-container p.subtitle { font-size: 1.15em; color: #555; margin-bottom: 50px; }
+        
+        .options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        
+        .option-card { background: #ffffff; border-radius: 10px; padding: 40px 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 5px solid #0033A0; }
+        .option-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+        
+        .option-icon { font-size: 3.2em; margin-bottom: 20px; }
+        .option-title { font-size: 1.4em; margin-bottom: 15px; color: #222; }
+        .option-desc { color: #666; margin-bottom: 30px; line-height: 1.5; font-size: 0.95em; }
+        
+        .schedule-btn { display: inline-block; padding: 14px 28px; background-color: #0033A0; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background-color 0.3s ease; }
+        .schedule-btn:hover { background-color: #002270; }
+    </style>
+</head>
+<body>
+
+<div class="schedule-container">
+    <h1>Schedule Your Consultation</h1>
+    <p class="subtitle">Choose the meeting type that works best for you. Let's simplify your Medicare options!</p>
+
+    <div class="options-grid">
+        <!-- Option 1: 15-Minute Phone Call -->
+        <div class="option-card">
+            <div class="option-icon">📞</div>
+            <h2 class="option-title">15-Minute Phone Call</h2>
+            <p class="option-desc">A quick introductory phone call to answer any immediate Medicare questions you might have.</p>
+            <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1pimWMEwLGr6SJZi090q2-UlP7xT24yoioH1Ocsz-pCheCRRv48mux_ASCuXUb-IX264Tn_gLl" target="_blank" class="schedule-btn">Schedule Phone Call</a>
+        </div>
+
+        <!-- Option 2: 45-Minute Zoom Meeting -->
+        <div class="option-card">
+            <div class="option-icon">💻</div>
+            <h2 class="option-title">45-Minute Virtual Meeting</h2>
+            <p class="option-desc">Connect with me online via Zoom from the comfort of your home to review your Medicare options.</p>
+            <a href="https://scheduler.zoom.us/jason-york-myyycn/45-mins-with-jason" target="_blank" class="schedule-btn">Schedule Zoom Meeting</a>
+        </div>
+
+        <!-- Option 3: 1-Hour In-Person Meeting -->
+        <div class="option-card">
+            <div class="option-icon">🤝</div>
+            <h2 class="option-title">1-Hour In-Person Meeting</h2>
+            <p class="option-desc">Meet with me face-to-face in the West Palm area to discuss your health coverage needs in detail.</p>
+            <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0g4-5B0nsiBamLw6znnDUddRvj-kHpzRhfQQc1xZf04owNrMzFAwFMWJFoMLKUvbUgUhP82vKg" target="_blank" class="schedule-btn">Schedule In-Person</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
