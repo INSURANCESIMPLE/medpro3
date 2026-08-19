@@ -1,7 +1,72 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" /><style>
+  /* Styling for the Calendar Dropdown */
+  .calendar-dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    margin: 0 10px;
+  }
+  .calendar-dropbtn {
+    background-color: #0033A0; /* Medicare Blue */
+    color: white;
+    padding: 10px 18px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .calendar-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 240px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+    z-index: 9999;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+    border: 1px solid #eee;
+  }
+  .calendar-dropdown-content a {
+    color: #333;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    border-bottom: 1px solid #f1f1f1;
+    transition: background-color 0.2s ease;
+  }
+  .calendar-dropdown-content a:last-child {
+    border-bottom: none;
+  }
+  .calendar-dropdown-content a:hover {
+    background-color: #f4f7f6;
+    color: #0033A0;
+    font-weight: bold;
+  }
+  /* Show dropdown on hover */
+  .calendar-dropdown:hover .calendar-dropdown-content {
+    display: block;
+  }
+  .calendar-dropdown:hover .calendar-dropbtn {
+    background-color: #002270;
+  }
+</style>
+
+<!-- The Dropdown HTML -->
+<div class="calendar-dropdown">
+  <button class="calendar-dropbtn">📅 Calendar ▾</button>
+  <div class="calendar-dropdown-content">
+    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1pimWMEwLGr6SJZi090q2-UlP7xT24yoioH1Ocsz-pCheCRRv48mux_ASCuXUb-IX264Tn_gLl" target="_blank">📞 15-Minute Phone Call</a>
+    <a href="https://scheduler.zoom.us/jason-york-myyycn/45-mins-with-jason" target="_blank">💻 45-Minute Zoom Meeting</a>
+    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0g4-5B0nsiBamLw6znnDUddRvj-kHpzRhfQQc1xZf04owNrMzFAwFMWJFoMLKUvbUgUhP82vKg" target="_blank">🤝 1-Hour In-Person Meeting</a>
+  </div>
+</div>
     <a href="/schedule.html">Schedule an Appointment</a>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Medicare Professor | 2026 Medicare Guidance & Plan Comparison</title>
