@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/schedule.css';
 
-const Schedule: React.FC = () => {
+export const Schedule: React.FC = () => {
   const scheduleOptions = [
     {
       icon: '📞',
