@@ -5,7 +5,7 @@ const CalendarDropdown: React.FC = () => {
   const zoomLink = 'https://scheduler.zoom.us/Insurance-Made-Simple';
 
   const handleScheduleClick = () => {
-    window.location.href = zoomLink;
+    window.open(zoomLink, '_blank', 'noopener,noreferrer');
   };
 
   return (
