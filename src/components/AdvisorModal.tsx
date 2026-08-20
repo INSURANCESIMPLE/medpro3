@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Phone, CheckCircle2, ShieldCheck, User, Mail, MapPin, Send } from 'lucide-react';
+import { AdvisorConsultationForm } from '../types';
 
 interface AdvisorModalProps {
   isOpen: boolean;
@@ -8,7 +9,9 @@ interface AdvisorModalProps {
 
 export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) => {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [formData, setFormData] = useState<AdvisorConsultationForm>({
     fullName: '',
     phone: '',
     email: '',
@@ -20,13 +23,42 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const response = await fetch('/api/advisor-consultation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          phone: formData.phone,
+          email: formData.email,
+          zipCode: formData.zipCode,
+          turning65Soon: formData.turning65Soon,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Advisor consultation submission failed:', error);
+      setSubmitError('We could not send your request right now. Please try again in a moment.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setSubmitError('');
     onClose();
   };
 
@@ -182,12 +214,19 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 min-h-[48px]"
+                  disabled={isSubmitting}
+                  className="w-full py-3.5 bg-blue-700 hover:bg-blue-800 disabled:bg-blue-400 disabled:cursor-not-allowed text-white font-extrabold text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 min-h-[48px]"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Request Free Advisor Phone Call</span>
+                  <span>{isSubmitting ? 'Sending Request...' : 'Request Free Advisor Phone Call'}</span>
                 </button>
               </div>
+
+              {submitError && (
+                <p className="text-[11px] text-center text-red-600 font-medium">
+                  {submitError}
+                </p>
+              )}
 
               <p className="text-[11px] text-slate-400 text-center leading-tight">
                 By submitting, you agree to be contacted by a licensed Medicare insurance agent. Your information is strictly confidential.
