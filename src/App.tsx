@@ -7,6 +7,7 @@ import { ResourceHub } from './components/ResourceHub';
 import { PlanFinder } from './components/PlanFinder';
 import { TimelineCalculator } from './components/TimelineCalculator';
 import { AboutPage } from './components/AboutPage';
+import { Schedule } from './components/Schedule';
 import { InsuranceSimplifiedBanner } from './components/InsuranceSimplifiedBanner';
 import { InsuranceSimplifiedModal } from './components/InsuranceSimplifiedModal';
 import { AdvisorModal } from './components/AdvisorModal';
@@ -85,6 +86,10 @@ export default function App() {
             onOpenAdvisorModal={() => setIsAdvisorModalOpen(true)}
             onOpenInsuranceModal={() => setIsInsuranceModalOpen(true)}
           />
+        )}
+
+        {activeTab === 'schedule' && (
+          <Schedule />
         )}
 
       </main>

@@ -1,0 +1,164 @@
+.schedule-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.schedule-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.schedule-header h1 {
+  color: #0033A0;
+  font-size: 2.8em;
+  margin-bottom: 15px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.schedule-container p.subtitle {
+  font-size: 1.2em;
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.calendar-embed-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.calendar-info {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 50px 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid #0033A0;
+  text-align: center;
+  max-width: 600px;
+}
+
+.calendar-text {
+  color: #333;
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.meeting-options-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.meeting-options-list li {
+  color: #333;
+  font-size: 1em;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f1f1;
+  font-weight: 500;
+}
+
+.meeting-options-list li:last-child {
+  border-bottom: none;
+}
+
+.zoom-calendar-btn {
+  display: inline-block;
+  padding: 18px 40px;
+  background-color: #0033A0;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+  border: 2px solid #0033A0;
+  cursor: pointer;
+}
+
+.zoom-calendar-btn:hover {
+  background-color: #002270;
+  border-color: #002270;
+  text-decoration: none;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 51, 160, 0.3);
+}
+
+.zoom-calendar-btn:active {
+  transform: scale(0.98);
+}
+
+.zoom-calendar-btn:focus {
+  outline: 2px solid #0033A0;
+  outline-offset: 2px;
+}
+
+/* Tablet responsiveness */
+@media (max-width: 900px) {
+  .schedule-header h1 {
+    font-size: 2.2em;
+  }
+
+  .schedule-container p.subtitle {
+    font-size: 1.05em;
+  }
+
+  .calendar-info {
+    padding: 40px 30px;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .schedule-container {
+    padding: 15px;
+  }
+
+  .schedule-header {
+    margin-bottom: 35px;
+  }
+
+  .schedule-header h1 {
+    font-size: 1.8em;
+    margin-bottom: 12px;
+  }
+
+  .schedule-container p.subtitle {
+    font-size: 1em;
+  }
+
+  .calendar-embed-container {
+    min-height: 300px;
+  }
+
+  .calendar-info {
+    padding: 30px 20px;
+    border: 2px solid #0033A0;
+  }
+
+  .calendar-text {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  .meeting-options-list li {
+    font-size: 0.95em;
+    padding: 8px 0;
+  }
+
+  .zoom-calendar-btn {
+    padding: 16px 30px;
+    font-size: 1em;
+    width: 100%;
+  }
+}

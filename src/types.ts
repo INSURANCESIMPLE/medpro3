@@ -11,7 +11,7 @@ export interface Testimonial {
   savingsOrOutcome?: string;
 }
 
-export type ActiveTab = 'home' | 'plans' | 'resources' | 'timeline' | 'about' | 'insurance-simplified' | 'contact';
+export type ActiveTab = 'home' | 'plans' | 'resources' | 'timeline' | 'about' | 'schedule' | 'insurance-simplified' | 'contact';
 
 export interface MedicareResource {
   id: string;
