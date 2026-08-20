@@ -7,21 +7,21 @@ const Schedule: React.FC = () => {
       icon: '📞',
       title: '15-Minute Phone Call',
       description: 'A quick introductory phone call to answer any immediate Medicare questions you might have.',
-      link: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1pimWMEwLGr6SJZi090q2-UlP7xT24yoioH1Ocsz-pCheCRRv48mux_ASCuXUb-IX264Tn_gLl',
+      link: 'https://scheduler.zoom.us/Insurance-Made-Simple',
       buttonText: 'Schedule Phone Call'
     },
     {
       icon: '💻',
       title: '45-Minute Virtual Meeting',
       description: 'Connect with me online via Zoom from the comfort of your home to review your Medicare options.',
-      link: 'https://scheduler.zoom.us/jason-york-myyycn/45-mins-with-jason',
+      link: 'https://scheduler.zoom.us/Insurance-Made-Simple',
       buttonText: 'Schedule Zoom Meeting'
     },
     {
       icon: '🤝',
       title: '1-Hour In-Person Meeting',
       description: 'Meet with me face-to-face in the West Palm area to discuss your health coverage needs in detail.',
-      link: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0g4-5B0nsiBamLw6znnDUddRvj-kHpzRhfQQc1xZf04owNrMzFAwFMWJFoMLKUvbUgUhP82vKg',
+      link: 'https://scheduler.zoom.us/Insurance-Made-Simple',
       buttonText: 'Schedule In-Person'
     }
   ];
