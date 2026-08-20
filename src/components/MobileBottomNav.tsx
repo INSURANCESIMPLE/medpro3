@@ -6,7 +6,8 @@ import {
   Search, 
   BookOpen, 
   ExternalLink, 
-  PhoneCall
+  PhoneCall,
+  Calendar
 } from 'lucide-react';
 
 interface MobileBottomNavProps {
@@ -68,19 +69,17 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
           <span className="text-[10px] leading-tight">Resources</span>
         </button>
 
-        {/* Insurance Simplified Direct Touch Access */}
+        {/* Schedule - Direct Zoom Link */}
         <a
-          href={INSURANCE_SIMPLIFIED_INFO.url}
+          href="https://scheduler.zoom.us/Insurance-Made-Simple"
           target="_blank"
-          rel="noreferrer"
-          className="flex flex-col items-center justify-center py-1 rounded-xl bg-amber-50 border border-amber-300 text-amber-950 font-bold transition-all min-h-[48px] relative group"
-          title="Visit Insurance Simplified"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center justify-center py-1 rounded-xl bg-green-50 border border-green-300 text-green-950 font-bold transition-all min-h-[48px] hover:bg-green-100"
+          title="Book a consultation"
         >
-          <span className="flex items-center gap-0.5 text-amber-600">
-            <ExternalLink className="w-4 h-4 mb-0.5" />
-          </span>
-          <span className="text-[9px] leading-tight font-extrabold text-amber-900">
-            Insurance ↗
+          <Calendar className="w-5 h-5 mb-0.5 text-green-600" />
+          <span className="text-[9px] leading-tight font-extrabold text-green-900">
+            Schedule
           </span>
         </a>
 
