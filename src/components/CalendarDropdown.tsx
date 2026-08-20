@@ -13,15 +13,15 @@ const CalendarDropdown: React.FC = () => {
   const calendarLinks: CalendarLink[] = [
     {
       text: '📞 15-Minute Phone Call',
-      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1pimWMEwLGr6SJZi090q2-UlP7xT24yoioH1Ocsz-pCheCRRv48mux_ASCuXUb-IX264Tn_gLl'
+      url: 'https://scheduler.zoom.us/Insurance-Made-Simple'
     },
     {
       text: '💻 45-Minute Zoom Meeting',
-      url: 'https://scheduler.zoom.us/jason-york-myyycn/45-mins-with-jason'
+      url: 'https://scheduler.zoom.us/Insurance-Made-Simple'
     },
     {
       text: '🤝 1-Hour In-Person Meeting',
-      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0g4-5B0nsiBamLw6znnDUddRvj-kHpzRhfQQc1xZf04owNrMzFAwFMWJFoMLKUvbUgUhP82vKg'
+      url: 'https://scheduler.zoom.us/Insurance-Made-Simple'
     }
   ];
 
