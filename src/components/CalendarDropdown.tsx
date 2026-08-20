@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import '../styles/calendar-dropdown.css';
 
+interface CalendarLink {
+  text: string;
+  url: string;
+}
+
 const CalendarDropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  const calendarLinks = [
+  const calendarLinks: CalendarLink[] = [
     {
       text: '📞 15-Minute Phone Call',
       url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1pimWMEwLGr6SJZi090q2-UlP7xT24yoioH1Ocsz-pCheCRRv48mux_ASCuXUb-IX264Tn_gLl'
@@ -19,24 +25,54 @@ const CalendarDropdown: React.FC = () => {
     }
   ];
 
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = (url: string) => {
+    window.open(url, '_blank');
+    setIsOpen(false);
+  };
+
+  const handleClickOutside = (e: React.MouseEvent) => {
+    if (!(e.target as HTMLElement).closest('.calendar-dropdown')) {
+      setIsOpen(false);
+    }
+  };
+
   return (
     <div 
       className="calendar-dropdown"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+      onClick={handleClickOutside}
     >
-      <button className="calendar-dropbtn">📅 Calendar ▾</button>
+      <button 
+        className="calendar-dropbtn"
+        onClick={handleToggle}
+        aria-expanded={isOpen}
+        aria-label="Calendar and scheduling options"
+      >
+        📅 Schedule ▾
+      </button>
+      
       {isOpen && (
-        <div className="calendar-dropdown-content">
+        <div 
+          className="calendar-dropdown-content"
+          role="menu"
+        >
           {calendarLinks.map((link, index) => (
-            <a 
+            <button
               key={index}
-              href={link.url} 
-              target="_blank" 
-              rel="noopener noreferrer"
+              role="menuitem"
+              className="dropdown-link"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              onClick={() => handleLinkClick(link.url)}
+              style={{
+                backgroundColor: hoveredIndex === index ? '#f4f7f6' : 'transparent'
+              }}
             >
               {link.text}
-            </a>
+            </button>
           ))}
         </div>
       )}
