@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
 import { ActiveTab } from '../types';
-import { INSURANCE_SIMPLIFIED_INFO, GOOGLE_REVIEW_STATS } from '../data/medicareData';
 import { 
   GraduationCap, 
   Menu, 
   X, 
-  ExternalLink, 
   Phone, 
   BookOpen, 
   Search, 
   Calendar, 
-  ShieldCheck,
-  QrCode,
-  Award,
-  Star
+  Award
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -136,7 +131,7 @@ export const Header: React.FC<HeaderProps> = ({
               href="https://scheduler.zoom.us/Insurance-Made-Simple"
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1.5 bg-green-600 text-white hover:bg-green-700`}
+              className="px-4 py-2 rounded-lg text-sm font-semibold bg-green-600 text-white hover:bg-green-700 transition-colors flex items-center gap-1.5"
               title="Book a consultation"
             >
               <Calendar className="w-4 h-4" />
@@ -148,7 +143,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(prev => !prev)}
-              aria-label="Toggle quick navigation menu"
+              aria-label="Toggle navigation menu"
               className="px-3 py-2 flex items-center gap-2 rounded-xl bg-slate-900 text-white font-extrabold text-xs shadow-sm active:scale-95 transition-all cursor-pointer min-h-[42px]"
             >
               {mobileMenuOpen ? (
@@ -208,7 +203,7 @@ export const Header: React.FC<HeaderProps> = ({
               rel="noopener noreferrer"
               className="block w-full text-left px-3 py-2 rounded-lg text-sm font-semibold bg-green-600 text-white hover:bg-green-700"
             >
-              📅 Schedule
+              📅 Schedule Consultation
             </a>
           </div>
         </div>
