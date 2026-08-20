@@ -1,15 +1,11 @@
 import React from 'react';
 import '../styles/calendar-dropdown.css';
 
-interface CalendarDropdownProps {
-  onNavigateToSchedule?: () => void;
-}
+const CalendarDropdown: React.FC = () => {
+  const zoomLink = 'https://scheduler.zoom.us/Insurance-Made-Simple';
 
-const CalendarDropdown: React.FC<CalendarDropdownProps> = ({ onNavigateToSchedule }) => {
   const handleScheduleClick = () => {
-    if (onNavigateToSchedule) {
-      onNavigateToSchedule();
-    }
+    window.location.href = zoomLink;
   };
 
   return (
@@ -17,7 +13,7 @@ const CalendarDropdown: React.FC<CalendarDropdownProps> = ({ onNavigateToSchedul
       <button 
         className="calendar-dropbtn"
         onClick={handleScheduleClick}
-        aria-label="Go to scheduling page"
+        aria-label="Open booking calendar"
       >
         📅 Schedule
       </button>
