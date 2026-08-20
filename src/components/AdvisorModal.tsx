@@ -8,6 +8,8 @@ interface AdvisorModalProps {
 
 export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) => {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -20,9 +22,26 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error((data as { error?: string }).error ?? 'Submission failed. Please try again.');
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Submission failed. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -182,11 +201,15 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 min-h-[48px]"
+                  disabled={submitting}
+                  className="w-full py-3.5 bg-blue-700 hover:bg-blue-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-extrabold text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 min-h-[48px]"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Request Free Advisor Phone Call</span>
+                  <span>{submitting ? 'Sending…' : 'Request Free Advisor Phone Call'}</span>
                 </button>
+                {submitError && (
+                  <p className="mt-2 text-xs text-red-600 text-center">{submitError}</p>
+                )}
               </div>
 
               <p className="text-[11px] text-slate-400 text-center leading-tight">
