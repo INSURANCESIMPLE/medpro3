@@ -117,13 +117,15 @@ export const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
             <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
           </a>
 
-          <button
-            onClick={onOpenAdvisorModal}
-            className="px-4 py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs rounded-xl shadow-md transition-all flex items-center justify-center gap-1.5 min-h-[42px] cursor-pointer"
+          <a
+            href="https://scheduler.zoom.us/Insurance-Made-Simple"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs rounded-xl shadow-md transition-all flex items-center justify-center gap-1.5 min-h-[42px] cursor-pointer text-decoration-none"
           >
             <Phone className="w-3.5 h-3.5" />
             <span>Consult The Professor</span>
-          </button>
+          </a>
         </div>
       </div>
 
