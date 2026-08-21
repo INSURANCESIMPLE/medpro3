@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { ActiveTab } from './types';
 import { Header } from './components/Header';
 import { MobileBottomNav } from './components/MobileBottomNav';
@@ -10,16 +10,19 @@ import { AboutPage } from './components/AboutPage';
 import { Schedule } from './components/Schedule';
 import { InsuranceSimplifiedBanner } from './components/InsuranceSimplifiedBanner';
 import { InsuranceSimplifiedModal } from './components/InsuranceSimplifiedModal';
-import { AdvisorModal } from './components/AdvisorModal';
 import { QRCodeModal } from './components/QRCodeModal';
 import { Footer } from './components/Footer';
+
+const ZOOM_SCHEDULER_URL = 'https://scheduler.zoom.us/Insurance-Made-Simple';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('home');
   const [isInsuranceModalOpen, setIsInsuranceModalOpen] = useState(false);
-  const [isAdvisorModalOpen, setIsAdvisorModalOpen] = useState(false);
   const [isQRCodeModalOpen, setIsQRCodeModalOpen] = useState(false);
   const [isMobilePreviewMode, setIsMobilePreviewMode] = useState(false);
+  const onOpenAdvisorModal = useCallback(() => {
+    window.open(ZOOM_SCHEDULER_URL, '_blank', 'noopener,noreferrer');
+  }, []);
 
   return (
     <div className={`min-h-screen bg-slate-100 text-slate-900 font-sans selection:bg-amber-300 selection:text-slate-950 flex flex-col justify-between ${
@@ -31,7 +34,7 @@ export default function App() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         onOpenInsuranceModal={() => setIsInsuranceModalOpen(true)}
-        onOpenAdvisorModal={() => setIsAdvisorModalOpen(true)}
+        onOpenAdvisorModal={onOpenAdvisorModal}
         onOpenQRCodeModal={() => setIsQRCodeModalOpen(true)}
         isMobilePreviewMode={isMobilePreviewMode}
         setIsMobilePreviewMode={setIsMobilePreviewMode}
@@ -45,7 +48,7 @@ export default function App() {
             <Hero
               setActiveTab={setActiveTab}
               onOpenInsuranceModal={() => setIsInsuranceModalOpen(true)}
-              onOpenAdvisorModal={() => setIsAdvisorModalOpen(true)}
+              onOpenAdvisorModal={onOpenAdvisorModal}
             />
 
             {/* Insurance Simplified Prominent Banner */}
@@ -59,7 +62,7 @@ export default function App() {
           <div className="space-y-8">
             <ResourceHub
               onOpenInsuranceModal={() => setIsInsuranceModalOpen(true)}
-              onOpenAdvisorModal={() => setIsAdvisorModalOpen(true)}
+              onOpenAdvisorModal={onOpenAdvisorModal}
             />
 
             <InsuranceSimplifiedBanner
@@ -71,19 +74,19 @@ export default function App() {
         {activeTab === 'plans' && (
           <PlanFinder
             onOpenInsuranceModal={() => setIsInsuranceModalOpen(true)}
-            onOpenAdvisorModal={() => setIsAdvisorModalOpen(true)}
+            onOpenAdvisorModal={onOpenAdvisorModal}
           />
         )}
 
         {activeTab === 'timeline' && (
           <TimelineCalculator
-            onOpenAdvisorModal={() => setIsAdvisorModalOpen(true)}
+            onOpenAdvisorModal={onOpenAdvisorModal}
           />
         )}
 
         {activeTab === 'about' && (
           <AboutPage
-            onOpenAdvisorModal={() => setIsAdvisorModalOpen(true)}
+            onOpenAdvisorModal={onOpenAdvisorModal}
             onOpenInsuranceModal={() => setIsInsuranceModalOpen(true)}
           />
         )}
@@ -98,7 +101,7 @@ export default function App() {
       <Footer
         setActiveTab={setActiveTab}
         onOpenInsuranceModal={() => setIsInsuranceModalOpen(true)}
-        onOpenAdvisorModal={() => setIsAdvisorModalOpen(true)}
+        onOpenAdvisorModal={onOpenAdvisorModal}
         onOpenQRCodeModal={() => setIsQRCodeModalOpen(true)}
       />
 
@@ -107,20 +110,14 @@ export default function App() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         onOpenInsuranceModal={() => setIsInsuranceModalOpen(true)}
-        onOpenAdvisorModal={() => setIsAdvisorModalOpen(true)}
+        onOpenAdvisorModal={onOpenAdvisorModal}
       />
 
       {/* Insurance Simplified Partner Modal */}
       <InsuranceSimplifiedModal
         isOpen={isInsuranceModalOpen}
         onClose={() => setIsInsuranceModalOpen(false)}
-        onOpenAdvisorModal={() => setIsAdvisorModalOpen(true)}
-      />
-
-      {/* Advisor Consultation Callback Modal */}
-      <AdvisorModal
-        isOpen={isAdvisorModalOpen}
-        onClose={() => setIsAdvisorModalOpen(false)}
+        onOpenAdvisorModal={onOpenAdvisorModal}
       />
 
       {/* Mobile QR Code Modal */}

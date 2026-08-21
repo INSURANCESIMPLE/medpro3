@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Phone, CheckCircle2, ShieldCheck, User, Mail, MapPin, Send } from 'lucide-react';
+import { X, Phone, CheckCircle2, ShieldCheck, User, Mail, MapPin, Send, Calendar } from 'lucide-react';
 
 interface AdvisorModalProps {
   isOpen: boolean;
@@ -51,11 +51,13 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
               100% Free Service
             </span>
             <a
-              href="tel:5617707957"
+              href="https://scheduler.zoom.us/Insurance-Made-Simple"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-blue-800/80 hover:bg-blue-800 text-amber-300 font-bold text-[11px] px-2.5 py-0.5 rounded-full border border-blue-700/60 flex items-center gap-1 transition-colors whitespace-nowrap shrink-0"
             >
-              <Phone className="w-3 h-3 text-amber-300 shrink-0" />
-              <span>Call Direct: <span className="whitespace-nowrap font-extrabold">(561) 770-7957</span></span>
+              <Calendar className="w-3 h-3 text-amber-300 shrink-0" />
+              <span>Schedule Direct Consultation</span>
             </a>
           </div>
 
