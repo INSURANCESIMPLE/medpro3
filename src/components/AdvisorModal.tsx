@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Phone, CheckCircle2, ShieldCheck, User, Mail, MapPin, Send } from 'lucide-react';
+import { X, Phone, CheckCircle2, ShieldCheck, User, Mail, MapPin, Send, Calendar } from 'lucide-react';
 
 interface AdvisorModalProps {
   isOpen: boolean;
@@ -56,7 +56,7 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
               rel="noopener noreferrer"
               className="bg-blue-800/80 hover:bg-blue-800 text-amber-300 font-bold text-[11px] px-2.5 py-0.5 rounded-full border border-blue-700/60 flex items-center gap-1 transition-colors whitespace-nowrap shrink-0"
             >
-              <Phone className="w-3 h-3 text-amber-300 shrink-0" />
+              <Calendar className="w-3 h-3 text-amber-300 shrink-0" />
               <span>Schedule Direct Consultation</span>
             </a>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { ActiveTab } from './types';
 import { Header } from './components/Header';
 import { MobileBottomNav } from './components/MobileBottomNav';
@@ -10,20 +10,19 @@ import { AboutPage } from './components/AboutPage';
 import { Schedule } from './components/Schedule';
 import { InsuranceSimplifiedBanner } from './components/InsuranceSimplifiedBanner';
 import { InsuranceSimplifiedModal } from './components/InsuranceSimplifiedModal';
-import { AdvisorModal } from './components/AdvisorModal';
 import { QRCodeModal } from './components/QRCodeModal';
 import { Footer } from './components/Footer';
 
+const ZOOM_SCHEDULER_URL = 'https://scheduler.zoom.us/Insurance-Made-Simple';
+
 export default function App() {
-  const ZOOM_SCHEDULER_URL = 'https://scheduler.zoom.us/Insurance-Made-Simple';
   const [activeTab, setActiveTab] = useState<ActiveTab>('home');
   const [isInsuranceModalOpen, setIsInsuranceModalOpen] = useState(false);
-  const [isAdvisorModalOpen, setIsAdvisorModalOpen] = useState(false);
   const [isQRCodeModalOpen, setIsQRCodeModalOpen] = useState(false);
   const [isMobilePreviewMode, setIsMobilePreviewMode] = useState(false);
-  const onOpenAdvisorModal = () => {
+  const onOpenAdvisorModal = useCallback(() => {
     window.open(ZOOM_SCHEDULER_URL, '_blank', 'noopener,noreferrer');
-  };
+  }, []);
 
   return (
     <div className={`min-h-screen bg-slate-100 text-slate-900 font-sans selection:bg-amber-300 selection:text-slate-950 flex flex-col justify-between ${
@@ -119,12 +118,6 @@ export default function App() {
         isOpen={isInsuranceModalOpen}
         onClose={() => setIsInsuranceModalOpen(false)}
         onOpenAdvisorModal={onOpenAdvisorModal}
-      />
-
-      {/* Advisor Consultation Callback Modal */}
-      <AdvisorModal
-        isOpen={isAdvisorModalOpen}
-        onClose={() => setIsAdvisorModalOpen(false)}
       />
 
       {/* Mobile QR Code Modal */}
