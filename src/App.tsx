@@ -11,12 +11,29 @@ import { AboutPage } from './components/AboutPage';
 import { Schedule } from './components/Schedule';
 import { InsuranceSimplifiedBanner } from './components/InsuranceSimplifiedBanner';
 import { InsuranceSimplifiedModal } from './components/InsuranceSimplifiedModal';
-import { PrivacyModal } from './components/PrivacyModal';
+import { PrivacyPolicyPage } from './components/PrivacyModal';
 import { QRCodeModal } from './components/QRCodeModal';
-import { TermsModal } from './components/TermsModal';
+import { TermsOfServicePage } from './components/TermsModal';
 import { Footer } from './components/Footer';
 
 const ZOOM_SCHEDULER_URL = 'https://scheduler.zoom.us/Insurance-Made-Simple';
+
+const getActiveTab = (pathname: string): ActiveTab => {
+  switch (pathname) {
+    case '/plans':
+      return 'plans';
+    case '/resources':
+      return 'resources';
+    case '/timeline':
+      return 'timeline';
+    case '/about':
+      return 'about';
+    case '/schedule':
+      return 'schedule';
+    default:
+      return 'home';
+  }
+};
 
 export default function App() {
   const navigate = useNavigate();
@@ -24,23 +41,6 @@ export default function App() {
   const [isInsuranceModalOpen, setIsInsuranceModalOpen] = useState(false);
   const [isQRCodeModalOpen, setIsQRCodeModalOpen] = useState(false);
   const [isMobilePreviewMode, setIsMobilePreviewMode] = useState(false);
-
-  const getActiveTab = (pathname: string): ActiveTab => {
-    switch (pathname) {
-      case '/plans':
-        return 'plans';
-      case '/resources':
-        return 'resources';
-      case '/timeline':
-        return 'timeline';
-      case '/about':
-        return 'about';
-      case '/schedule':
-        return 'schedule';
-      default:
-        return 'home';
-    }
-  };
 
   const activeTab = getActiveTab(location.pathname);
 
@@ -145,8 +145,8 @@ export default function App() {
             )}
           />
           <Route path="/schedule" element={<Schedule />} />
-          <Route path="/privacy-policy" element={<PrivacyModal />} />
-          <Route path="/terms-of-service" element={<TermsModal />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-of-service" element={<TermsOfServicePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

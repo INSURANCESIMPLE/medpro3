@@ -28,9 +28,9 @@ const privacySections = [
   },
 ];
 
-export const PrivacyModal: React.FC = () => {
+export const PrivacyPolicyPage: React.FC = () => {
   return (
-    <div className="w-full max-w-3xl mx-auto animate-in fade-in duration-200" aria-labelledby="privacy-policy-title">
+    <div className="w-full max-w-3xl mx-auto animate-in fade-in duration-200" role="region" aria-labelledby="privacy-policy-title">
       <div
         className="w-full rounded-2xl sm:rounded-3xl border border-slate-700 bg-slate-950 text-slate-200 shadow-2xl relative"
       >
