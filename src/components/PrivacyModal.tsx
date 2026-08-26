@@ -26,6 +26,16 @@ const privacySections = [
     title: 'Your Choices',
     body: 'You may request updates, corrections, or removal of information you have submitted by contacting us directly. You can also choose not to provide optional information, though some services may be limited as a result.',
   },
+  {
+    title: 'Mobile Data We Collect', 
+    body: 1.When you access our Website using a mobile device, we may automatically collect certain information, including:Device Information: Your mobile device model, operating system, unique device identifiers (such as advertising IDs), and mobile network information.
+    Location Data: Approximate location derived from your IP address or, with your explicit consent, precise real-time geolocation data through your device settings. 
+    Usage Data: Information about how you interact with our Website, including page views, timestamps, and app/browser diagnostic data.
+    2. How We Use and Share Mobile Data: We use the mobile data we collect to optimize our Website interface, troubleshoot technical issues, and improve our services. We do not sell, rent, or share your mobile data or mobile phone numbers with third parties for marketing or promotional purposes.
+    Your mobile data will only be shared under the following strict circumstances: Service Providers: With trusted vendors who assist us in operating our Website and delivering services, under strict confidentiality agreements.Legal Compliance: When required by law, subpoena, or legal process to protect our rights or the safety of our users.
+    3. Your Mobile Privacy ChoicesYou have control over the mobile data you share with us. You can manage your privacy through the following methods:Location Services: You can disable precise location tracking at any time by adjusting the permissions in your mobile device settings.Do Not Track: You can set your mobile browser to opt-out of behavioral tracking mechanisms.
+    Opt-Out of Communications: If you have provided your mobile number for updates, you can opt-out at any time by replying "STOP" to any mobile message you receive. "Message frequency is periodic, not to exceed 10 messages per calendar month.""message and data rates may apply"
+  },
 ];
 
 export const PrivacyModal: React.FC = () => {
