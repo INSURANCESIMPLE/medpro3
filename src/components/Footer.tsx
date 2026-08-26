@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ActiveTab } from '../types';
 import { INSURANCE_SIMPLIFIED_INFO } from '../data/medicareData';
 import { GraduationCap, ExternalLink, Phone, Mail, ShieldCheck, Heart, QrCode } from 'lucide-react';
@@ -160,8 +161,12 @@ export const Footer: React.FC<FooterProps> = ({
               © {new Date().getFullYear()} Medicare Professor & Insurance Simplified. All Rights Reserved.
             </div>
             <div className="flex items-center gap-4">
-              <span className="hover:text-slate-400 cursor-pointer">Privacy Policy</span>
-              <span className="hover:text-slate-400 cursor-pointer">Terms of Service</span>
+              <Link to="/privacy-policy" className="hover:text-slate-400 cursor-pointer transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/terms-of-service" className="hover:text-slate-400 cursor-pointer transition-colors">
+                Terms of Service
+              </Link>
               <span className="hover:text-slate-400 cursor-pointer">Accessibility</span>
             </div>
           </div>
