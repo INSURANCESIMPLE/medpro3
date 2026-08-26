@@ -1,10 +1,5 @@
 import React from 'react';
-import { ShieldCheck, X } from 'lucide-react';
-
-interface PrivacyModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
+import { ShieldCheck } from 'lucide-react';
 
 const privacySections = [
   {
@@ -33,30 +28,13 @@ const privacySections = [
   },
 ];
 
-export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-
+export const PrivacyModal: React.FC = () => {
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-xs animate-in fade-in duration-200"
-      onClick={onClose}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="privacy-policy-title"
-    >
+    <div className="w-full max-w-3xl mx-auto animate-in fade-in duration-200" aria-labelledby="privacy-policy-title">
       <div
-        className="w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl sm:rounded-3xl border border-slate-700 bg-slate-950 text-slate-200 shadow-2xl relative"
-        onClick={(e) => e.stopPropagation()}
+        className="w-full rounded-2xl sm:rounded-3xl border border-slate-700 bg-slate-950 text-slate-200 shadow-2xl relative"
       >
         <div className="sticky top-0 z-10 rounded-t-2xl sm:rounded-t-3xl border-b border-slate-800 bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 p-6 sm:p-8">
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
-            aria-label="Close privacy policy"
-          >
-            <X className="w-5 h-5" />
-          </button>
-
           <div className="mb-2 flex items-center gap-2">
             <span className="flex items-center gap-1 rounded-full bg-blue-500/20 px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-blue-200">
               <ShieldCheck className="w-3 h-3" />
