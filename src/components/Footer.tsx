@@ -7,6 +7,8 @@ interface FooterProps {
   setActiveTab: (tab: ActiveTab) => void;
   onOpenInsuranceModal: () => void;
   onOpenAdvisorModal: () => void;
+  onOpenPrivacyModal: () => void;
+  onOpenTermsModal: () => void;
   onOpenQRCodeModal?: () => void;
 }
 
@@ -14,6 +16,8 @@ export const Footer: React.FC<FooterProps> = ({
   setActiveTab,
   onOpenInsuranceModal,
   onOpenAdvisorModal,
+  onOpenPrivacyModal,
+  onOpenTermsModal,
   onOpenQRCodeModal,
 }) => {
   return (
@@ -160,8 +164,12 @@ export const Footer: React.FC<FooterProps> = ({
               © {new Date().getFullYear()} Medicare Professor & Insurance Simplified. All Rights Reserved.
             </div>
             <div className="flex items-center gap-4">
-              <span className="hover:text-slate-400 cursor-pointer">Privacy Policy</span>
-              <span className="hover:text-slate-400 cursor-pointer">Terms of Service</span>
+              <button onClick={onOpenPrivacyModal} className="hover:text-slate-400 cursor-pointer transition-colors">
+                Privacy Policy
+              </button>
+              <button onClick={onOpenTermsModal} className="hover:text-slate-400 cursor-pointer transition-colors">
+                Terms of Service
+              </button>
               <span className="hover:text-slate-400 cursor-pointer">Accessibility</span>
             </div>
           </div>
