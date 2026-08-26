@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ActiveTab } from '../types';
 import { INSURANCE_SIMPLIFIED_INFO } from '../data/medicareData';
 import { GraduationCap, ExternalLink, Phone, Mail, ShieldCheck, Heart, QrCode } from 'lucide-react';
@@ -7,8 +8,6 @@ interface FooterProps {
   setActiveTab: (tab: ActiveTab) => void;
   onOpenInsuranceModal: () => void;
   onOpenAdvisorModal: () => void;
-  onOpenPrivacyModal: () => void;
-  onOpenTermsModal: () => void;
   onOpenQRCodeModal?: () => void;
 }
 
@@ -16,8 +15,6 @@ export const Footer: React.FC<FooterProps> = ({
   setActiveTab,
   onOpenInsuranceModal,
   onOpenAdvisorModal,
-  onOpenPrivacyModal,
-  onOpenTermsModal,
   onOpenQRCodeModal,
 }) => {
   return (
@@ -164,12 +161,12 @@ export const Footer: React.FC<FooterProps> = ({
               © {new Date().getFullYear()} Medicare Professor & Insurance Simplified. All Rights Reserved.
             </div>
             <div className="flex items-center gap-4">
-              <button onClick={onOpenPrivacyModal} className="hover:text-slate-400 cursor-pointer transition-colors">
+              <Link to="/privacy-policy" className="hover:text-slate-400 cursor-pointer transition-colors">
                 Privacy Policy
-              </button>
-              <button onClick={onOpenTermsModal} className="hover:text-slate-400 cursor-pointer transition-colors">
+              </Link>
+              <Link to="/terms-of-service" className="hover:text-slate-400 cursor-pointer transition-colors">
                 Terms of Service
-              </button>
+              </Link>
               <span className="hover:text-slate-400 cursor-pointer">Accessibility</span>
             </div>
           </div>
