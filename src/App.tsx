@@ -10,7 +10,9 @@ import { AboutPage } from './components/AboutPage';
 import { Schedule } from './components/Schedule';
 import { InsuranceSimplifiedBanner } from './components/InsuranceSimplifiedBanner';
 import { InsuranceSimplifiedModal } from './components/InsuranceSimplifiedModal';
+import { PrivacyModal } from './components/PrivacyModal';
 import { QRCodeModal } from './components/QRCodeModal';
+import { TermsModal } from './components/TermsModal';
 import { Footer } from './components/Footer';
 
 const ZOOM_SCHEDULER_URL = 'https://scheduler.zoom.us/Insurance-Made-Simple';
@@ -19,6 +21,8 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('home');
   const [isInsuranceModalOpen, setIsInsuranceModalOpen] = useState(false);
   const [isQRCodeModalOpen, setIsQRCodeModalOpen] = useState(false);
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
   const [isMobilePreviewMode, setIsMobilePreviewMode] = useState(false);
   const onOpenAdvisorModal = useCallback(() => {
     window.open(ZOOM_SCHEDULER_URL, '_blank', 'noopener,noreferrer');
@@ -102,6 +106,8 @@ export default function App() {
         setActiveTab={setActiveTab}
         onOpenInsuranceModal={() => setIsInsuranceModalOpen(true)}
         onOpenAdvisorModal={onOpenAdvisorModal}
+        onOpenPrivacyModal={() => setIsPrivacyModalOpen(true)}
+        onOpenTermsModal={() => setIsTermsModalOpen(true)}
         onOpenQRCodeModal={() => setIsQRCodeModalOpen(true)}
       />
 
@@ -126,6 +132,16 @@ export default function App() {
         onClose={() => setIsQRCodeModalOpen(false)}
       />
 
+      <PrivacyModal
+        isOpen={isPrivacyModalOpen}
+        onClose={() => setIsPrivacyModalOpen(false)}
+      />
+
+      <TermsModal
+        isOpen={isTermsModalOpen}
+        onClose={() => setIsTermsModalOpen(false)}
+      />
+
     </div>
   );
-}
+};
