@@ -148,6 +148,8 @@ export default function App() {
           <Route path="/privacy-policy" element={<PrivacyModal />} />
           <Route path="/terms-of-service" element={<TermsModal />} />
           <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/privacy-policy" element={<PrivacyModal />} />
+          <Route path="/privacypolicy" element={<PrivacyModal />} />
         </Routes>
       </main>
 
