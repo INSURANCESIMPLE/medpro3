@@ -176,3 +176,11 @@ export const Footer: React.FC<FooterProps> = ({
     </footer>
   );
 };
+<a
+  href="/privacypolicy"
+  target="_blank"
+  rel="noreferrer"
+  className="hover:text-slate-400 cursor-pointer transition-colors"
+>
+  Privacy Policy
+</a>
