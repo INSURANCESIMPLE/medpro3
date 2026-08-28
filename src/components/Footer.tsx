@@ -161,7 +161,7 @@ export const Footer: React.FC<FooterProps> = ({
               © {new Date().getFullYear()} Medicare Professor & Insurance Simplified. All Rights Reserved.
             </div>
             <div className="flex items-center gap-4">
-              <Link to="/privacy-policy" className="hover:text-slate-400 cursor-pointer transition-colors">
+              <Link to="/privacy-policy" ...>Privacy Policy</Link>
                 Privacy Policy
               </Link>
               <Link to="/terms-of-service" className="hover:text-slate-400 cursor-pointer transition-colors">
@@ -174,13 +174,3 @@ export const Footer: React.FC<FooterProps> = ({
 
       </div>
     </footer>
-  );
-};
-<a
-  href="/privacypolicy"
-  target="_blank"
-  rel="noreferrer"
-  className="hover:text-slate-400 cursor-pointer transition-colors"
->
-  Privacy Policy
-</a>
