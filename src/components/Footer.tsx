@@ -171,6 +171,13 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
           </div>
         </div>
-
+<a
+  href="/privacypolicy"
+  target="_blank"
+  rel="noreferrer"
+  className="hover:text-slate-400 cursor-pointer transition-colors"
+>
+  Privacy Policy
+</a>
       </div>
     </footer>
