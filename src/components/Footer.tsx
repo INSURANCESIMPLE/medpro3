@@ -42,7 +42,7 @@ export const Footer: React.FC<FooterProps> = ({
               Empowering seniors with unbiased 2026 Medicare guidance, comparison tools, and 1-page cheatsheets.
             </p>
 
-            <div className="pt-1">
+            <div className="pt-1 space-y-2">
               <a
                 href={INSURANCE_SIMPLIFIED_INFO.url}
                 target="_blank"
@@ -50,6 +50,16 @@ export const Footer: React.FC<FooterProps> = ({
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-300 bg-slate-900 border border-amber-500/30 px-3 py-1.5 rounded-lg hover:bg-slate-800 transition-colors"
               >
                 <span>Beyond Medicare - Life & Retirement Products</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+
+              <a
+                href="https://go.themedicare-professor.com/book/medicare-professor-com/medicare-consult?embed=1"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-300 bg-slate-900 border border-emerald-500/30 px-3 py-1.5 rounded-lg hover:bg-slate-800 transition-colors"
+              >
+                <span>Book Your Medicare Consult</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -129,7 +139,7 @@ export const Footer: React.FC<FooterProps> = ({
 
             <button
               onClick={onOpenAdvisorModal}
-              className="w-full py-2.5 px-3 bg-blue-700 hover:bg-blue-600 text-white font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer min-h-[44px]"
+              className="w-full py-2.5 px-3 bg-blue-700 hover:bg-blue-600 text-white font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
             >
               <Phone className="w-3.5 h-3.5 shrink-0 text-amber-300" />
               <span>Call <span className="whitespace-nowrap font-extrabold">(561) 770-7957</span></span>
@@ -138,7 +148,7 @@ export const Footer: React.FC<FooterProps> = ({
             {onOpenQRCodeModal && (
               <button
                 onClick={onOpenQRCodeModal}
-                className="w-full py-2 bg-slate-900 hover:bg-slate-850 text-blue-300 font-bold text-xs rounded-xl border border-blue-900/60 transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-2 bg-slate-900 hover:bg-slate-850 text-blue-300 font-bold text-xs rounded-xl border border-blue-900/60 transition-colors flex items-center justify-center gap-2"
               >
                 <QrCode className="w-3.5 h-3.5 text-amber-300" />
                 <span>Site Mobile QR Code</span>
@@ -151,7 +161,7 @@ export const Footer: React.FC<FooterProps> = ({
         {/* CMS Compliance Disclaimer */}
         <div className="pt-8 border-t border-slate-900 text-[11px] text-slate-500 space-y-3 leading-relaxed">
           <p>
-            <strong>CMS Disclaimer:</strong> We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact <a href="https://www.medicare.gov" target="_blank" rel="noreferrer" className="underline text-slate-400">Medicare.gov</a> or 1-800-MEDICARE (1-800-633-4227), 24 hours a day/7 days a week, to get information on all of your options.
+            <strong>CMS Disclaimer:</strong> We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program to get information on all your options.
           </p>
           <p>
             Medicare Professor and Insurance Simplified are private health insurance information portals and are not connected with or endorsed by the U.S. government or the federal Medicare program.
@@ -161,7 +171,7 @@ export const Footer: React.FC<FooterProps> = ({
               © {new Date().getFullYear()} Medicare Professor & Insurance Simplified. All Rights Reserved.
             </div>
             <div className="flex items-center gap-4">
-              <Link to="/privacy-policy" ...>Privacy Policy</Link>
+              <Link to="/privacy-policy" className="hover:text-slate-400 cursor-pointer transition-colors">
                 Privacy Policy
               </Link>
               <Link to="/terms-of-service" className="hover:text-slate-400 cursor-pointer transition-colors">
@@ -171,13 +181,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
           </div>
         </div>
-<a
-  href="/privacypolicy"
-  target="_blank"
-  rel="noreferrer"
-  className="hover:text-slate-400 cursor-pointer transition-colors"
->
-  Privacy Policy
-</a>
       </div>
     </footer>
+  );
+};
