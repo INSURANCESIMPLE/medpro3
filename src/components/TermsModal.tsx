@@ -19,10 +19,6 @@ const termsSections = [
     body: 'By using this site, you agree to provide accurate information when requesting assistance and to use the website only for lawful purposes. You agree not to misuse forms, interfere with site operations, or attempt unauthorized access.',
   },
   {
-    title: 'Third-Party Links',
-    body: 'This website may link to outside resources or partner sites for scheduling, educational materials, or related insurance products. We are not responsible for the content, availability, or privacy practices of those third-party services.',
-  },
-  {
     title: 'Limitation of Liability',
     body: 'Medicare Professor and its partners are not liable for losses or damages arising from reliance on website content, temporary site interruptions, or decisions made using general information presented on this site.',
   },
