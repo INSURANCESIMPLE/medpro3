@@ -2,26 +2,59 @@ import React from 'react';
 import { FileText } from 'lucide-react';
 
 const termsSections = [
+  { 
+    title: 'the terms',
+    body: 'These Terms of Service ("Terms") govern your use of www.medicare-professor.com (the "Site"), operated by Medicare Professor ("we," "us," or "our"), including our SMS/text messaging program. By using the Site, submitting a form, or opting in to receive text messages from us, you agree to these Terms.If you do not agree, please do not use the Site or opt in to our messaging program.',
   {
-    title: 'Educational Use Only',
-    body: 'Content on Medicare Professor is provided for general informational and educational purposes. It does not replace personalized advice from a licensed insurance professional, legal advisor, or government representative.',
+    title: 'Who We Are',
+    body: 'You agree to use the Site only for lawful purposes and to provide accurate information when submitting any form. You may not use the Site to, Submit false or misleading contact information, Attempt to disrupt, damage, or gain unauthorized access to the Site, Use automated tools (bots, scrapers) to interact with the Site without our permission.',
   },
   {
-    title: 'No Government Affiliation',
-    body: 'Medicare Professor is a private Medicare information resource and is not affiliated with, endorsed by, or acting on behalf of the U.S. government, CMS, or the federal Medicare program.',
+    title: 'Use of the Site',
+    body: 'You agree to use the Site only for lawful purposes and to provide accurate information when submitting any form. You may not use the Site to, Submit false or misleading contact information, Attempt to disrupt, damage, or gain unauthorized access to the Site, Use automated tools (bots, scrapers) to interact with the Site without our permission.',
   },
   {
-    title: 'Plan Availability & Accuracy',
-    body: 'Plan details, pricing, availability, and benefits may vary by carrier, location, and eligibility. While we aim to keep information current, you should confirm final plan details directly with Medicare, carriers, or a licensed agent.',
+    title: 'SMS / Text Messaging Terms',
+    body: 'This section describes the text messaging program offered through the Site (the "Program") and applies to anyone who opts in to receive text messages from us.
+    Description By opting in, you agree to receive SMS text messages from Medicare Professor related to your inquiry, such as: Confirmations of a quote request or appointment. Follow-up on questions you submitted.Reminders and requested plan or coverage information.
+    How to opt in You opt in by checking the consent box on a Site form and submitting your phone number, or by another method that clearly indicates your consent.
+    Message frequency: Message frequency varies depending on your interaction with us and the information you request.
+    Cost: Message and data rates may apply, depending on your mobile carrier and plan.
+    How to opt out: You can opt out of the Program at any time by replying STOP to any message you receive from us. After you send STOP, we will send a confirmation message and you will not receive further texts from us unless you opt in again.
+    How to get help: Reply HELP to any message, or contact us at support@medicare-professor.com, for assistance.
+    Supported carriers are not liable for delayed or undelivered messages.
+    No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties for any purpose. See our Privacy Policy for full details on how your information is used and protected.
+    Consenting to receive text messages is not a condition of purchasing any product or service',
   },
   {
-    title: 'User Responsibilities',
-    body: 'By using this site, you agree to provide accurate information when requesting assistance and to use the website only for lawful purposes. You agree not to misuse forms, interfere with site operations, or attempt unauthorized access.',
+    title: 'No Insurance or Medicare Advice',
+    body: 'Content on the Site is for general informational purposes only and does not constitute insurance, medical, financial, or legal advice, and is not a guarantee of coverage, eligibility, or plan availability. Plan availability and details vary by location and change over time; please confirm details with a licensed agent or the relevant plan provider before making a decision.,
+  },
+  {
+    title: 'Third-Party Links',
+    body: 'The Site may link to third-party websites we do not control. We are not responsible for the content, accuracy, or privacy practices of any third-party site.',
+  },
+  {
+    title: 'Disclaimer of Warranties',
+    body: 'The Site and its content are provided "as is" and "as available," without warranties of any kind, express or implied, including accuracy, completeness, or fitness for a particular purpose.',
   },
   {
     title: 'Limitation of Liability',
-    body: 'Medicare Professor and its partners are not liable for losses or damages arising from reliance on website content, temporary site interruptions, or decisions made using general information presented on this site.',
+    body: 'To the fullest extent permitted by law, Medicare Professor shall not be liable for any indirect, incidental, or consequential damages arising from your use of the Site or the Program.',
   },
+  {
+    title: 'Changes to These Terms',
+    body: 'We may update these Terms from time to time. Continued use of the Site or the Program after changes are posted constitutes acceptance of the revised Terms.',
+  },
+  {
+    title: 'Governing Law',
+    body: 'These Terms are governed by the laws of the state in which Medicare Professor operates, without regard to conflict-of-law principles.',
+  },
+  {
+    title: 'Contact Us',
+    body: 'Questions about these Terms or the text messaging Program can be sent to
+    Medicare Professor Email: support@medicare-professor.com Website: www.medicare-professor.com',
+  {
 ];
 
 export const TermsModal: React.FC = () => {
