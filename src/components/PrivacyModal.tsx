@@ -9,7 +9,7 @@ type PrivacySection = {
 const privacySections: PrivacySection[] = [
   {
     title: 'Overview',
-    body: 'Medicare Professor ("we," "us," or "our") operates www.medicare-professor.com (the "Site"), including any text messaging (SMS) program offered through the Site. This Privacy Policy explains what information we collect, how we use it, and — most importantly — how we protect it. The short version: information you opt in to give us, including consent to receive calls or text messages, is used only for the purpose you gave it for, and we do not sell or share it with third parties for their own marketing purposes.',
+    body: 'Medicare Professor, an insurance made simple company ("we," "us," or "our") operates www.medicare-professor.com (the "Site"), including any text messaging (SMS) program offered through the Site. This Privacy Policy explains what information we collect, how we use it, and — most importantly — how we protect it. The short version: information you opt in to give us, including consent to receive calls or text messages, is used only for the purpose you gave it for, and we do not sell or share it with third parties for their own marketing purposes.',
   },
   {
     title: 'Information We Collect',
