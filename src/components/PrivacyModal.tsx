@@ -39,7 +39,7 @@ No mobile information will be shared with third parties or affiliates for market
 • Message frequency varies based on your interaction with us.
 • Message and data rates may apply.
 • Reply STOP at any time to opt out of text messages.
-• Reply HELP for assistance, or contact us using the information in Section 9.
+• Reply HELP for assistance, or contact us by emailing support@medicare-professor.com
 Text messaging opt-in data and consent are not shared with any third parties for any purpose, including marketing.`,
   },
   {
@@ -112,7 +112,8 @@ export const PrivacyModal: React.FC = () => {
             <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate-300">
               {`If you have questions about this Privacy Policy or how your information is handled, contact us at:
 Medicare Professor
-Email: jason@flainsurancesolutions.com
+Email: jason@medicare-professor.com
+Support phone: 561-408-4068
 Website: www.medicare-professor.com`}
             </p>
           </section>
