@@ -145,6 +145,30 @@ export const Footer: React.FC<FooterProps> = ({
               <span>Call <span className="whitespace-nowrap font-extrabold">(561) 770-7957</span></span>
             </button>
 
+            <div className="space-y-2 rounded-xl border border-slate-800 bg-slate-900/60 p-3">
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-300">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                Insurance Made Simple Company
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                The Medicare Professor is an Insurance Made Simple company.
+              </p>
+              <a
+                href="tel:5614084068"
+                className="flex items-center gap-2 text-xs font-bold text-white hover:text-amber-300 transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+                <span>Support Number: 561-408-4068</span>
+              </a>
+              <a
+                href="mailto:support@medicare-professor.com"
+                className="flex items-center gap-2 text-xs font-bold text-white hover:text-amber-300 transition-colors break-all"
+              >
+                <Mail className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+                <span>support@medicare-professor.com</span>
+              </a>
+            </div>
+
             {onOpenQRCodeModal && (
               <button
                 onClick={onOpenQRCodeModal}
