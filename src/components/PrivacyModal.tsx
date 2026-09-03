@@ -112,7 +112,7 @@ export const PrivacyModal: React.FC = () => {
             <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate-300">
               {`If you have questions about this Privacy Policy or how your information is handled, contact us at:
 Medicare Professor
-Email: jason@medicare-professor.com
+Email: support@medicare-professor.com
 Support phone: 561-408-4068
 Website: www.medicare-professor.com`}
             </p>
