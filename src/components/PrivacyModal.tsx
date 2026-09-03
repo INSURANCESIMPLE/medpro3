@@ -45,6 +45,10 @@ Text messaging opt-in data and consent are not shared with any third parties for
 • Comply with applicable laws and regulations, including those governing insurance marketing and communications.`,
   },
   {
+    title: 'message ande data rates',
+    body: 'As always, message and data rates may apply for any messages sent to you from us and to us from you. Message frequency varies based on your interactions with us. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.',
+  },
+  {
     title: 'Cookies and Analytics',
     body: 'We may use cookies or similar technologies to understand how visitors use the Site and to improve its performance. These tools collect general, non-identifying usage data. You can disable cookies in your browser settings; doing so may affect some Site features.',
   },
