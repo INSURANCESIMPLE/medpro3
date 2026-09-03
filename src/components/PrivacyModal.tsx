@@ -16,8 +16,7 @@ const privacySections: PrivacySection[] = [
     body: `We collect information only when you choose to provide it, such as by filling out a form, requesting a quote, or contacting us. This may include:
 • Contact details: name, email address, phone number, and mailing address.
 • Information relevant to insurance or Medicare plan questions you ask us, such as your age, ZIP code, or current coverage.
-• Any message or details you voluntarily submit through a contact or quote request form.
-We also automatically collect limited technical data (such as browser type, device type, and pages visited) through standard website analytics and cookies, described in Section 6.`,
+• Any message or details you voluntarily submit through a contact or quote request form.`,
   },
   {
     title: 'Opt-In Consent',
@@ -27,10 +26,6 @@ You may withdraw this consent at any time by contacting us using the information
   {
     title: 'We Do Not Share Your Opt-In Data With Third Parties',
     body: `This is the core of our privacy commitment: information you provide through an opt-in form on this Site is not sold, rented, or shared with third parties for their own marketing or advertising purposes. Your information is used solely by us (and, where applicable, a licensed insurance agent working on our behalf) to respond to your request.
-The limited exceptions to this are:
-• Service providers who help us operate the Site or fulfill your request (such as email delivery, hosting, or SMS/text messaging delivery providers), who are contractually required to keep your information confidential and use it only to perform that service.
-• Disclosures required by law, such as in response to a valid subpoena, court order, or government request.
-• Protecting our rights, safety, or property, or that of our users, in cases of fraud or misuse of the Site.
 No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties for any purpose.`,
   },
   {
@@ -38,7 +33,7 @@ No mobile information will be shared with third parties or affiliates for market
     body: `If you opt in to receive text messages from Medicare Professor, you consent to receive SMS messages related to your inquiry, such as quote follow-ups, appointment reminders, and requested plan information. Consent to receive text messages is never a condition of purchasing any product or service.
 • Message frequency varies based on your interaction with us.
 • Message and data rates may apply.
-• Reply STOP at any time to opt out of text messages.
+• Reply STOP or END at any time to opt out of text messages.
 • Reply HELP for assistance, or contact us by emailing support@medicare-professor.com
 Text messaging opt-in data and consent are not shared with any third parties for any purpose, including marketing.`,
   },
@@ -47,7 +42,6 @@ Text messaging opt-in data and consent are not shared with any third parties for
     body: `We use the information you provide to:
 • Respond to your inquiry or quote request.
 • Provide information about insurance or Medicare plans you asked about.
-• Improve and maintain the Site.
 • Comply with applicable laws and regulations, including those governing insurance marketing and communications.`,
   },
   {
@@ -65,10 +59,6 @@ Text messaging opt-in data and consent are not shared with any third parties for
 • Ask us to correct or delete your information.
 • Withdraw your consent to be contacted, at any time — including opting out of text messages by replying STOP.
 To exercise any of these choices, contact us using the information below.`,
-  },
-  {
-    title: 'Changes to This Policy',
-    body: 'We may update this Privacy Policy from time to time. Any changes will be posted on this page with a revised effective date.',
   },
 ];
 
