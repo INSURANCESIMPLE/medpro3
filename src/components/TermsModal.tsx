@@ -4,7 +4,7 @@ import { FileText } from 'lucide-react';
 const termsSections = [
   {
     title: 'Agreement to Terms',
-    body: 'These Terms of Service ("Terms") govern your use of www.medicare-professor.com (the "Site"), operated by Medicare Professor ("we," "us," or "our"), including our SMS/text messaging program. By using the Site, submitting a form, or opting in to receive text messages from us, you agree to these Terms. If you do not agree, please do not use the Site or opt in to our messaging program.',
+    body: 'These Terms of Service ("Terms") govern your use of www.medicare-professor.com (the "Site"), operated by Medicare Professor an insurance made simple company ("we," "us," or "our"), including our SMS/text messaging program. By using the Site, submitting a form, or opting in to receive text messages from us, you agree to these Terms. If you do not agree, please do not use the Site or opt in to our messaging program.',
   },
   {
     title: 'Use of the Site',
@@ -49,7 +49,7 @@ Consenting to receive text messages is not a condition of purchasing any product
   },
   {
     title: 'Contact Us',
-    body: `Questions about these Terms or the text messaging Program can be sent to Medicare Professor.
+    body: `Questions about these Terms or the text messaging Program can be sent to Medicare Professor an insurance made simple company.
 Email: support@medicare-professor.com
 Website: www.medicare-professor.com`,
   },
