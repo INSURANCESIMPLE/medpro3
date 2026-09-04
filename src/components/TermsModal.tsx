@@ -80,6 +80,8 @@ export const TermsModal: React.FC = () => {
         <div className="space-y-5 p-6 sm:p-8">
           <div className="rounded-2xl border border-indigo-900/60 bg-indigo-950/30 p-4 text-sm leading-relaxed text-indigo-50">
             By accessing or using this website, you agree to these Terms of Service. If you do not agree, please discontinue use of the site.
+            https://www.medicare-professor.com/privacy-policy
+            for help email support@medicare-professor.com
           </div>
 
           {termsSections.map((section) => (
