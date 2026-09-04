@@ -51,7 +51,7 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
               100% Free Service
             </span>
             <a
-              href="https://scheduler.zoom.us/Insurance-Made-Simple"
+              href="https://scheduler.zoom.us/Medicare-professor"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-800/80 hover:bg-blue-800 text-amber-300 font-bold text-[11px] px-2.5 py-0.5 rounded-full border border-blue-700/60 flex items-center gap-1 transition-colors whitespace-nowrap shrink-0"

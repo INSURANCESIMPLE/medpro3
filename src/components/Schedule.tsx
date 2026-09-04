@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/schedule.css';
 
 export const Schedule: React.FC = () => {
-  const zoomLink = 'https://scheduler.zoom.us/Insurance-Made-Simple';
+  const zoomLink = 'https://scheduler.zoom.us/Medicare-professor';
 
   return (
     <div className="schedule-container">

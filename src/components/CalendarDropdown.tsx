@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/calendar-dropdown.css';
 
 const CalendarDropdown: React.FC = () => {
-  const zoomLink = 'https://scheduler.zoom.us/Insurance-Made-Simple';
+  const zoomLink = 'https://scheduler.zoom.us/Medicare-professor';
 
   const handleScheduleClick = () => {
     window.location.href = zoomLink;
