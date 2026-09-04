@@ -20,7 +20,7 @@ const privacySections: PrivacySection[] = [
   },
   {
     title: 'Opt-In Consent',
-    body: `Certain information — such as your contact details, and your consent to be contacted by phone, text message, or email — is collected only when you affirmatively opt in (for example, by checking a consent box and submitting a form). By opting in, you are agreeing to let us or a licensed representative contact you about the specific product or service you inquired about.
+    body: `Certain information — such as your contact details, and your consent to be contacted by phone, text message, or email — is collected only when you affirmatively opt in (for example, by checking a consent box on our zoom scheduling link: https://scheduler.zoom.us/Insurance-Made-Simple and submitting a form). By opting in, you are agreeing to let us or a licensed representative contact you about the specific product or service you inquired about.
 You may withdraw this consent at any time by contacting us using the information in Section 9, by replying "STOP" to any text message, or by using the unsubscribe link in any email.`,
   },
   {
