@@ -28,10 +28,6 @@ Consenting to receive text messages is not a condition of purchasing any product
     body: 'Content on the Site is for general informational purposes only and does not constitute insurance, medical, financial, or legal advice, and is not a guarantee of coverage, eligibility, or plan availability. Plan availability and details vary by location and change over time; please confirm details with a licensed agent or the relevant plan provider before making a decision.',
   },
   {
-    title: 'Third-Party Links',
-    body: 'The Site may link to third-party websites we do not control. We are not responsible for the content, accuracy, or privacy practices of any third-party site.',
-  },
-  {
     title: 'Disclaimer of Warranties',
     body: 'The Site and its content are provided "as is" and "as available," without warranties of any kind, express or implied, including accuracy, completeness, or fitness for a particular purpose.',
   },
@@ -94,7 +90,6 @@ export const TermsModal: React.FC = () => {
           <section className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
             <h3 className="text-base font-extrabold text-white">Updates to These Terms</h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-300">
-              We may update these terms from time to time to reflect service changes, legal obligations, or website improvements. Continued use of the site after updates are posted constitutes acceptance of the revised terms.
             </p>
           </section>
         </div>
