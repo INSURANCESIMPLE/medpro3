@@ -108,7 +108,8 @@ export const PrivacyModal: React.FC = () => {
 Medicare Professor
 Email: support@medicare-professor.com
 Support phone: 561-408-4068
-Website: www.medicare-professor.com`}
+Website: www.medicare-professor.com
+https://www.medicare-professor.com/terms-of-service`}
             </p>
           </section>
         </div>
