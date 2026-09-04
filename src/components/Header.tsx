@@ -135,7 +135,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             <a
-              href="https://scheduler.zoom.us/Insurance-Made-Simple"
+              href="https://scheduler.zoom.us/medicare-professor"
               target="_blank"
               rel="noopener noreferrer"
               className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1.5 bg-green-600 text-white hover:bg-green-700`}
@@ -332,7 +332,7 @@ export const Header: React.FC<HeaderProps> = ({
 
               {/* Schedule & Booking */}
               <a
-                href="https://scheduler.zoom.us/Insurance-Made-Simple"
+                href="https://scheduler.zoom.us/medicare-professor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3.5 rounded-xl border border-green-500/60 bg-green-50/90 hover:bg-green-100 text-left transition-all cursor-pointer flex flex-col justify-between space-y-2 group shadow-xs"
@@ -425,11 +425,10 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
 
               {/* Call / Consult Advisor */}
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenAdvisorModal();
-                }}
+              <a
+                href="https://scheduler.zoom.us/medicare-professor"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-blue-700 text-white rounded-xl flex items-center justify-between gap-3 text-left hover:bg-blue-800 transition-colors cursor-pointer shadow-sm"
               >
                 <div className="space-y-0.5">
@@ -442,7 +441,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <span className="px-3 py-1.5 bg-amber-400 text-slate-950 font-black text-xs rounded-lg shrink-0">
                   Call Now
                 </span>
-              </button>
+              </a>
 
             </div>
 
