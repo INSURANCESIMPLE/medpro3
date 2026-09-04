@@ -16,7 +16,7 @@ import { QRCodeModal } from './components/QRCodeModal';
 import { TermsModal } from './components/TermsModal';
 import { Footer } from './components/Footer';
 
-const ZOOM_SCHEDULER_URL = 'https://scheduler.zoom.us/Insurance-Made-Simple';
+const ZOOM_SCHEDULER_URL = 'https://scheduler.zoom.us/Medicare-professor';
 
 export default function App() {
   const navigate = useNavigate();
