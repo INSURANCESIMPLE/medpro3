@@ -52,16 +52,6 @@ export const Footer: React.FC<FooterProps> = ({
                 <span>Beyond Medicare - Life & Retirement Products</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
-
-              <a
-                href="https://go.themedicare-professor.com/book/medicare-professor-com/medicare-consult?embed=1"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-300 bg-slate-900 border border-emerald-500/30 px-3 py-1.5 rounded-lg hover:bg-slate-800 transition-colors"
-              >
-                <span>Book Your Medicare Consult</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
             </div>
           </div>
 
@@ -185,7 +175,7 @@ export const Footer: React.FC<FooterProps> = ({
         {/* CMS Compliance Disclaimer */}
         <div className="pt-8 border-t border-slate-900 text-[11px] text-slate-500 space-y-3 leading-relaxed">
           <p>
-            <strong>CMS Disclaimer:</strong> We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program to get information on all your options.
+            <strong>CMS Disclaimer:</strong> We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov to see all available plans.
           </p>
           <p>
             Medicare Professor and Insurance Simplified are private health insurance information portals and are not connected with or endorsed by the U.S. government or the federal Medicare program.
