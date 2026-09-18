@@ -141,6 +141,11 @@ export const Hero: React.FC<HeroProps> = ({
           className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all cursor-pointer flex flex-col justify-between group relative overflow-hidden min-h-[200px]"
         >
           <div className="space-y-2">
+            <div className="w-fit max-w-[220px] [&_img]:w-full [&_img]:h-auto">
+              <a href="https://medicareagentshub.com/agents/jason-york?ref=badge">
+                <img src="https://medicareagentshub.com/images/verified-local-medicare-agent.png" />
+              </a>
+            </div>
             <div className="flex items-center justify-between">
               <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
                 <BookOpen className="w-5 h-5 text-amber-300" />
