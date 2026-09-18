@@ -81,6 +81,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         {/* Left Column: Personal Story Card */}
         <div className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-md space-y-6 flex flex-col justify-between">
           <div className="space-y-4">
+            <div className="w-fit max-w-[220px] [&_img]:w-full [&_img]:h-auto">
+              <a href="https://medicareagentshub.com/agents/jason-york?ref=badge">
+                <img src="https://medicareagentshub.com/images/verified-local-medicare-agent.png" />
+              </a>
+            </div>
             <div className="inline-flex items-center gap-2 text-blue-700 font-extrabold text-xs uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
               <HeartHandshake className="w-4 h-4" /> Personal Mission
             </div>
