@@ -204,13 +204,23 @@ export const ResourceHub: React.FC<ResourceHubProps> = ({
             </p>
           </div>
 
-          <button
-            onClick={onOpenAdvisorModal}
-            className="px-5 py-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs sm:text-sm rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer min-h-[42px]"
-          >
-            <Phone className="w-4 h-4" />
-            <span>Get 100% Tactic Quote</span>
-          </button>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 shrink-0">
+            <button
+              onClick={() => handleOpenDownloadModal("The Professor's 100% Coverage Tactic")}
+              className="px-4 py-3 bg-white/10 hover:bg-white/20 text-white font-extrabold text-xs sm:text-sm rounded-xl border border-white/20 transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer min-h-[42px]"
+            >
+              <Download className="w-4 h-4 text-amber-400" />
+              <span>Download / Print Tactic PDF</span>
+            </button>
+
+            <button
+              onClick={onOpenAdvisorModal}
+              className="px-5 py-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs sm:text-sm rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer min-h-[42px]"
+            >
+              <Phone className="w-4 h-4" />
+              <span>Get 100% Tactic Quote</span>
+            </button>
+          </div>
         </div>
 
         {/* 5 Add-on Pillars Grid */}
@@ -364,6 +374,14 @@ export const ResourceHub: React.FC<ResourceHubProps> = ({
         </div>
 
         <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+          <button
+            onClick={() => handleOpenDownloadModal("Beyond Medicare: Life & Retirement Guide")}
+            className="px-4 py-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold rounded-xl border border-white/20 transition-all flex items-center gap-1.5 cursor-pointer min-h-[44px]"
+          >
+            <Download className="w-4 h-4 text-amber-400" />
+            <span>Download Life & Annuity PDF</span>
+          </button>
+
           <a
             href={INSURANCE_SIMPLIFIED_INFO.url}
             target="_blank"
@@ -385,18 +403,28 @@ export const ResourceHub: React.FC<ResourceHubProps> = ({
 
       {/* Frequently Asked Questions (FAQ) Section */}
       <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
-            <HelpCircle className="w-5 h-5" />
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-2 border-b border-slate-100">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+              <HelpCircle className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-slate-900">
+                Medicare Frequently Asked Questions
+              </h3>
+              <p className="text-xs text-slate-500">
+                Clear answers to common senior insurance and enrollment questions.
+              </p>
+            </div>
           </div>
-          <div>
-            <h3 className="text-xl font-bold text-slate-900">
-              Medicare Frequently Asked Questions
-            </h3>
-            <p className="text-xs text-slate-500">
-              Clear answers to common senior insurance and enrollment questions.
-            </p>
-          </div>
+
+          <button
+            onClick={() => handleOpenDownloadModal("Medicare Frequently Asked Questions & Handbook")}
+            className="px-4 py-2.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-xs font-extrabold transition-all flex items-center gap-2 cursor-pointer shadow-xs shrink-0"
+          >
+            <Download className="w-4 h-4 text-emerald-700" />
+            <span>Download Master FAQ Guide (PDF)</span>
+          </button>
         </div>
 
         <div className="space-y-3">
