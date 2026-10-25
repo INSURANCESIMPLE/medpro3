@@ -8,6 +8,7 @@ interface FooterProps {
   onOpenInsuranceModal: () => void;
   onOpenAdvisorModal: () => void;
   onOpenQRCodeModal?: () => void;
+  onOpenLeadVault?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -15,6 +16,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenInsuranceModal,
   onOpenAdvisorModal,
   onOpenQRCodeModal,
+  onOpenLeadVault,
 }) => {
   return (
     <footer className="bg-slate-950 text-slate-300 pt-12 pb-24 md:pb-12 border-t border-slate-800">
@@ -159,10 +161,17 @@ export const Footer: React.FC<FooterProps> = ({
             <div>
               © {new Date().getFullYear()} Medicare Professor & Insurance Simplified. All Rights Reserved.
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 flex-wrap">
               <span className="hover:text-slate-400 cursor-pointer">Privacy Policy</span>
               <span className="hover:text-slate-400 cursor-pointer">Terms of Service</span>
-              <span className="hover:text-slate-400 cursor-pointer">Accessibility</span>
+              {onOpenLeadVault && (
+                <button 
+                  onClick={onOpenLeadVault} 
+                  className="text-amber-400/90 hover:text-amber-300 font-bold transition-colors cursor-pointer flex items-center gap-1"
+                >
+                  <span>📊 Advisor Lead Vault</span>
+                </button>
+              )}
             </div>
           </div>
         </div>

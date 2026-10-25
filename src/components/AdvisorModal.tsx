@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Phone, CheckCircle2, ShieldCheck, User, Mail, MapPin, Send } from 'lucide-react';
+import { submitLeadNotification, ADVISOR_NOTIFICATION_EMAIL } from '../services/leadService';
 
 interface AdvisorModalProps {
   isOpen: boolean;
@@ -21,29 +22,25 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
 
   if (!isOpen) return null;
 
-  const targetEmail = 'jason@medicare-professor.com';
+  const targetEmail = ADVISOR_NOTIFICATION_EMAIL;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      await fetch('/api/request-consultation', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          phone: formData.phone,
-          email: formData.email,
-          zipCode: formData.zipCode,
-          turning65Soon: formData.turning65Soon,
-          notes: formData.notes,
-        }),
+      await submitLeadNotification({
+        type: 'consultation',
+        fullName: formData.fullName,
+        phone: formData.phone,
+        email: formData.email,
+        zipCode: formData.zipCode,
+        turning65Soon: formData.turning65Soon,
+        resourceTitle: '1-on-1 Medicare Advisory Consultation',
+        notes: `Preferred contact: ${formData.preferredContactMethod}. Notes: ${formData.notes || 'None'}`,
       });
     } catch (err) {
-      console.warn('Consultation request API notification fallback', err);
+      console.warn('Consultation request notification fallback:', err);
     } finally {
       setIsSubmitting(false);
       setSubmitted(true);

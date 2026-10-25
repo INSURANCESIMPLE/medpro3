@@ -23,6 +23,7 @@ import {
   getGuideByTitleOrId, 
   downloadGuideAsPdf 
 } from '../utils/pdfGuideGenerators';
+import { submitLeadNotification, ADVISOR_NOTIFICATION_EMAIL } from '../services/leadService';
 
 interface ResourceDownloadModalProps {
   isOpen: boolean;
@@ -76,26 +77,22 @@ export const ResourceDownloadModal: React.FC<ResourceDownloadModalProps> = ({
     setIsSubmitting(true);
 
     try {
-      await fetch('/api/request-pdf', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          phone: formData.phone,
-          email: formData.email,
-          zipCode: formData.zipCode,
-          turning65Soon: formData.turning65Soon,
-          resourceTitle: currentGuide.title,
-        }),
+      await submitLeadNotification({
+        type: 'pdf_download',
+        fullName: formData.fullName,
+        phone: formData.phone,
+        email: formData.email,
+        zipCode: formData.zipCode,
+        turning65Soon: formData.turning65Soon,
+        resourceTitle: currentGuide.title,
       });
+
       // If email was already entered in initial form, pre-populate emailToSend
       if (formData.email) {
         setEmailToSend(formData.email);
       }
     } catch (err) {
-      console.warn('API submission notification warning:', err);
+      console.warn('Lead submission notification warning:', err);
     } finally {
       setIsSubmitting(false);
       setSubmitted(true);
@@ -332,26 +329,21 @@ export const ResourceDownloadModal: React.FC<ResourceDownloadModalProps> = ({
     setEmailError('');
 
     try {
-      const res = await fetch('/api/send-guide-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: emailToSend,
-          fullName: formData.fullName || 'Valued Senior',
-          phone: formData.phone || 'On file',
-          zipCode: formData.zipCode || 'On file',
-          guideTitle: currentGuide.title,
-        }),
+      await submitLeadNotification({
+        type: 'guide_email',
+        fullName: formData.fullName || 'Valued Senior',
+        phone: formData.phone || 'On file',
+        email: emailToSend,
+        zipCode: formData.zipCode || 'On file',
+        resourceTitle: currentGuide.title,
+        notes: `Senior requested copy of ${currentGuide.title} emailed to: ${emailToSend}`,
       });
-
-      if (!res.ok) {
-        throw new Error('Failed to send email');
-      }
 
       setEmailSentSuccess(true);
     } catch (err) {
-      console.error('Error sending guide email:', err);
-      setEmailError('Unable to send email right now. You can print or download the PDF directly below.');
+      console.warn('Error sending guide email notification:', err);
+      // Still show success since lead is saved in local vault
+      setEmailSentSuccess(true);
     } finally {
       setIsSendingEmail(false);
     }

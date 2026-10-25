@@ -11,6 +11,7 @@ import { InsuranceSimplifiedBanner } from './components/InsuranceSimplifiedBanne
 import { InsuranceSimplifiedModal } from './components/InsuranceSimplifiedModal';
 import { AdvisorModal } from './components/AdvisorModal';
 import { QRCodeModal } from './components/QRCodeModal';
+import { AdvisorLeadVaultModal } from './components/AdvisorLeadVaultModal';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
   const [isInsuranceModalOpen, setIsInsuranceModalOpen] = useState(false);
   const [isAdvisorModalOpen, setIsAdvisorModalOpen] = useState(false);
   const [isQRCodeModalOpen, setIsQRCodeModalOpen] = useState(false);
+  const [isLeadVaultOpen, setIsLeadVaultOpen] = useState(false);
   const [isMobilePreviewMode, setIsMobilePreviewMode] = useState(false);
 
   return (
@@ -95,6 +97,7 @@ export default function App() {
         onOpenInsuranceModal={() => setIsInsuranceModalOpen(true)}
         onOpenAdvisorModal={() => setIsAdvisorModalOpen(true)}
         onOpenQRCodeModal={() => setIsQRCodeModalOpen(true)}
+        onOpenLeadVault={() => setIsLeadVaultOpen(true)}
       />
 
       {/* Mobile Fixed Bottom Navigation Bar (Resource & Insurance Quick Touch Target) */}
@@ -122,6 +125,12 @@ export default function App() {
       <QRCodeModal
         isOpen={isQRCodeModalOpen}
         onClose={() => setIsQRCodeModalOpen(false)}
+      />
+
+      {/* Advisor Lead Vault Modal */}
+      <AdvisorLeadVaultModal
+        isOpen={isLeadVaultOpen}
+        onClose={() => setIsLeadVaultOpen(false)}
       />
 
     </div>
