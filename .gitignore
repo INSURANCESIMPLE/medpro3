@@ -1,5 +1,9 @@
 node_modules/
+build/
 dist/
-package-lock.json
-playwright-report/
-test-results/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+.aistudio/

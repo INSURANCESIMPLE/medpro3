@@ -70,15 +70,15 @@ export const PlanFinder: React.FC<PlanFinderProps> = ({
       {/* Search Header */}
       <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-xl space-y-4">
         <div className="inline-flex items-center gap-2 bg-amber-400 text-slate-950 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
-          <Search className="w-3.5 h-3.5" /> 2026 Medicare Plan Finder
+          <Search className="w-3.5 h-3.5" /> 2027 Medicare Plan Finder
         </div>
 
         <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
-          Compare Medicare Plans in Your ZIP Code
+          Compare 2027 Medicare Plans in Your ZIP Code
         </h1>
 
         <p className="text-blue-100 text-sm sm:text-base max-w-2xl">
-          Enter your ZIP code to compare top-rated Medicare Advantage, Medigap Supplement, and Part D prescription plans from leading carriers.
+          Enter your ZIP code to compare top-rated 2027 Medicare Advantage, Medigap Supplement, and Part D prescription plans from leading carriers.
         </p>
 
         {/* Search Inputs */}

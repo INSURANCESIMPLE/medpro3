@@ -64,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({
                   Medicare<span className="text-blue-700">Professor</span>
                 </span>
                 <span className="hidden xs:inline-block text-[10px] bg-blue-100 text-blue-800 font-bold px-1.5 py-0.5 rounded uppercase">
-                  2026 Edition
+                  2027 Edition
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 font-medium hidden sm:block">
@@ -133,17 +133,6 @@ export const Header: React.FC<HeaderProps> = ({
               <Award className="w-4 h-4 text-amber-600" />
               About & Why Us
             </button>
-
-            <a
-              href="https://scheduler.zoom.us/medicare-professor"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1.5 bg-green-600 text-white hover:bg-green-700`}
-              title="Book a consultation"
-            >
-              <Calendar className="w-4 h-4" />
-              📅 Schedule
-            </a>
 
             {/* Quick Page Selection Hamburger Button for Desktop */}
             <button
@@ -330,33 +319,12 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
               </button>
 
-              {/* Schedule & Booking */}
-              <a
-                href="https://scheduler.zoom.us/medicare-professor"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3.5 rounded-xl border border-green-500/60 bg-green-50/90 hover:bg-green-100 text-left transition-all cursor-pointer flex flex-col justify-between space-y-2 group shadow-xs"
-              >
-                <div className="flex items-center justify-between">
-                  <Calendar className="w-5 h-5 text-green-600" />
-                  <span className="text-[10px] font-black uppercase tracking-wider text-green-900 bg-green-100/80 px-2 py-0.5 rounded-full flex items-center gap-0.5">
-                    Schedule <ExternalLink className="w-2.5 h-2.5" />
-                  </span>
-                </div>
-                <div>
-                  <h4 className="font-extrabold text-sm text-slate-900">6. Book Consultation</h4>
-                  <p className="text-xs text-slate-600 leading-snug font-medium">
-                    15-min call, 45-min Zoom, or 1-hour in-person meeting.
-                  </p>
-                </div>
-              </a>
-
-              {/* 5.0 Star Google Review Card */}
+              {/* 5.0 Star Google Review Card next to Why Us */}
               <a
                 href={GOOGLE_REVIEW_STATS.googleProfileUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="p-3.5 rounded-xl border border-amber-200 bg-amber-50/90 hover:bg-amber-100 text-left transition-all cursor-pointer flex flex-col justify-between space-y-2 group shadow-xs"
+                className="p-3.5 rounded-xl border border-amber-200 bg-amber-50/90 hover:bg-amber-100 text-left transition-all cursor-pointer flex flex-col justify-between space-y-2 group shadow-2xs"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-0.5 text-amber-500">
@@ -372,7 +340,7 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
                 <div>
                   <h4 className="font-extrabold text-sm text-slate-900 flex items-center justify-between">
-                    <span>7. Client Reviews</span>
+                    <span>6. Client Reviews</span>
                   </h4>
                   <p className="text-xs text-slate-600 leading-snug font-medium">
                     {GOOGLE_REVIEW_STATS.totalReviews}+ Verified 5-Star Reviews. "$1,420/yr saved!"
@@ -425,10 +393,11 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
 
               {/* Call / Consult Advisor */}
-              <a
-                href="https://scheduler.zoom.us/medicare-professor"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenAdvisorModal();
+                }}
                 className="p-3 bg-blue-700 text-white rounded-xl flex items-center justify-between gap-3 text-left hover:bg-blue-800 transition-colors cursor-pointer shadow-sm"
               >
                 <div className="space-y-0.5">
@@ -441,7 +410,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <span className="px-3 py-1.5 bg-amber-400 text-slate-950 font-black text-xs rounded-lg shrink-0">
                   Call Now
                 </span>
-              </a>
+              </button>
 
             </div>
 

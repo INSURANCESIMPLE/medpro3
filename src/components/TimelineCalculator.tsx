@@ -7,7 +7,7 @@ interface TimelineCalculatorProps {
 
 export const TimelineCalculator: React.FC<TimelineCalculatorProps> = ({ onOpenAdvisorModal }) => {
   const [birthMonth, setBirthMonth] = useState<number>(new Date().getMonth() + 1);
-  const [birthYear, setBirthYear] = useState<number>(1961); // ~65 in 2026
+  const [birthYear, setBirthYear] = useState<number>(1962); // ~65 in 2027
 
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',

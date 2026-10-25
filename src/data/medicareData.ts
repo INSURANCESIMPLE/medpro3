@@ -111,34 +111,35 @@ While Medigap Plan G or Plan N pays for your 20% Original Medicare doctor copays
   },
   {
     id: 'res-1',
-    title: '2026 Medicare Parts A, B, C & D Cheatsheet',
+    title: '2027 Medicare Parts A, B, C & D Cheatsheet',
     category: 'cheatsheet',
-    description: 'A 1-page summary breaking down costs, deductibles, premiums, and coverage limits for 2026.',
+    description: 'A 1-page summary breaking down costs, deductibles, premiums, and coverage limits for 2027.',
     readTime: '3 min read',
     iconName: 'FileText',
     isFeatured: true,
-    tags: ['Part A', 'Part B', 'Part C', 'Part D', 'Costs 2026'],
+    tags: ['Part A', 'Part B', 'Part C', 'Part D', 'Costs 2027'],
     content: `
-### 2026 Medicare Quick Summary
+### 2027 Medicare Quick Summary
 
 **Medicare Part A (Hospital Insurance):**
 - $0 Premium for most seniors with 40+ work quarters.
-- $1,676 Inpatient Hospital Deductible per benefit period.
+- $1,736 Inpatient Hospital Deductible per benefit period (projected CMS standard).
 - Covers hospital stays, skilled nursing facility care, hospice, and home health care.
 
 **Medicare Part B (Medical Insurance):**
-- Standard Monthly Premium: ~$185.00/month (varies based on IRMAA income brackets).
-- Annual Deductible: $257/year.
+- Standard Monthly Premium: ~$193.60/month (varies based on IRMAA income brackets).
+- Annual Deductible: $268/year.
 - After deductible is met, you typically pay 20% of Medicare-approved amount.
 
 **Medicare Part C (Medicare Advantage):**
 - Combines Part A & Part B, usually includes Part D prescription coverage.
 - Offered by private insurance companies approved by Medicare.
-- Maximum Out-of-Pocket (MOOP) protection caps yearly costs (typically $3,900 - $8,850).
+- Maximum Out-of-Pocket (MOOP) protection caps yearly costs (typically $3,900 - $9,350).
 
 **Medicare Part D (Prescription Drugs):**
-- Out-of-pocket prescription drug costs capped at $2,000 for 2026 under federal regulations!
-- Standard deductible capped at $590.
+- Out-of-pocket prescription drug costs capped for 2027 under the Inflation Reduction Act!
+- Standard deductible capped at $615.
+- Medicare Prescription Payment Plan (M3P) allows spreading out-of-pocket drug costs into monthly installments.
     `
   },
   {
@@ -208,18 +209,19 @@ Since Medigap Plan G and Plan N do NOT cover routine Dental, Vision, Cancer lump
   },
   {
     id: 'res-7',
-    title: '2026 Medicare Part D Prescription Drug Guide',
+    title: '2027 Medicare Part D Prescription Drug Guide',
     category: 'cheatsheet',
-    description: 'Overview of the $2,000 annual prescription spending cap, deductible limits, and pharmacy savings.',
+    description: 'Overview of the 2027 annual prescription spending cap, Medicare Prescription Payment Plan (M3P), and pharmacy savings.',
     readTime: '4 min read',
     iconName: 'FileText',
     isFeatured: true,
-    tags: ['Part D', 'Prescriptions', '$2000 Cap', 'Savings'],
+    tags: ['Part D', 'Prescriptions', '2027 Rx Cap', 'Savings', 'M3P'],
     content: `
-### 2026 Part D Spending Cap Highlights
+### 2027 Part D Spending Cap Highlights
 
-- **$2,000 Spending Cap:** Total out-of-pocket prescription drug costs are capped at $2,000 per year for all Part D enrollees.
-- **Deductible Cap:** Standard plan deductibles cannot exceed $590.
+- **Out-of-Pocket Spending Cap:** Prescription drug costs remain protected by the annual out-of-pocket spending cap under the Inflation Reduction Act.
+- **Medicare Prescription Payment Plan (M3P):** Opt-in program allowing enrollees to spread high out-of-pocket prescription costs across 12 monthly installments with $0 interest.
+- **Deductible Cap:** Standard 2027 plan deductibles cannot exceed $615.
 - **Preferred Pharmacies:** Utilizing preferred network pharmacies helps maximize savings on generic and brand-name medications.
     `
   }
@@ -272,14 +274,14 @@ export const SAMPLE_MEDICARE_PLANS: MedicarePlan[] = [
     type: 'Supplement (Medigap)',
     carrier: 'Mutual of Omaha',
     monthlyPremium: 138,
-    deductible: 257,
-    maxOutOfPocket: 257,
+    deductible: 268,
+    maxOutOfPocket: 268,
     starRating: 5.0,
     drugCoverageIncluded: false,
     dentalVisionIncluded: false,
     popularPlanCode: 'MEDIGAP-G',
     features: [
-      '100% Coverage for Part A Hospital Deductible ($1,676 value)',
+      '100% Coverage for Part A Hospital Deductible ($1,736 value)',
       'Covers 100% of Part B Excess Charges',
       'No Doctor Networks - See Any Provider in the USA',
       'No Specialist Referrals Required Ever',
@@ -292,7 +294,7 @@ export const SAMPLE_MEDICARE_PLANS: MedicarePlan[] = [
     type: 'Supplement (Medigap)',
     carrier: 'Aetna Senior Supplemental',
     monthlyPremium: 104,
-    deductible: 257,
+    deductible: 268,
     maxOutOfPocket: 500,
     starRating: 4.7,
     drugCoverageIncluded: false,
@@ -311,7 +313,7 @@ export const SAMPLE_MEDICARE_PLANS: MedicarePlan[] = [
     type: 'Prescription (Part D)',
     carrier: 'Wellcare',
     monthlyPremium: 0.50,
-    deductible: 590,
+    deductible: 615,
     maxOutOfPocket: 2000,
     starRating: 4.2,
     drugCoverageIncluded: true,
@@ -320,7 +322,7 @@ export const SAMPLE_MEDICARE_PLANS: MedicarePlan[] = [
     features: [
       'Ultra-low monthly premium ($0.50/mo)',
       '$0 Copay for Tier 1 Generics at Preferred Pharmacies',
-      '$2,000 Maximum Out-of-Pocket Cap on Drug Spending',
+      '$2,000 Maximum Out-of-Pocket Cap on Drug Spending & M3P Spreading',
       'Thousands of participating local and chain pharmacies'
     ]
   }
@@ -342,8 +344,8 @@ export const FAQ_DATA: FAQItem[] = [
   {
     id: 'faq-3',
     category: 'Part D Drugs',
-    question: 'Is there a limit to how much I pay for prescription drugs in 2026?',
-    answer: 'Yes! Under recent federal regulations, your total out-of-pocket costs for covered Part D prescription drugs are capped at $2,000 for the entire year 2026.'
+    question: 'Is there a limit to how much I pay for prescription drugs in 2027?',
+    answer: 'Yes! Under federal regulations, your total out-of-pocket costs for covered Part D prescription drugs remain strictly protected by the annual out-of-pocket cap for 2027 under the Inflation Reduction Act. Additionally, seniors can spread their prescription expenses across 12 monthly payments with the Medicare Prescription Payment Plan (M3P).'
   },
   {
     id: 'faq-addons',

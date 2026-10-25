@@ -165,7 +165,7 @@ export const ResourceHub: React.FC<ResourceHubProps> = ({
           </div>
 
           <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-            2026 Medicare Resource Center
+            2027 Medicare Resource Center
           </h1>
 
           <p className="text-emerald-100 text-sm sm:text-base leading-relaxed font-medium">
@@ -174,7 +174,7 @@ export const ResourceHub: React.FC<ResourceHubProps> = ({
 
           <div className="pt-2 flex flex-wrap items-center gap-2">
             <span className="bg-emerald-950/40 text-emerald-200 text-xs px-2.5 py-1 rounded-lg border border-emerald-500/30 font-medium">
-              ✓ Updated for 2026 CMS Rates
+              ✓ Updated for 2027 CMS Rates
             </span>
             <span className="bg-emerald-950/40 text-emerald-200 text-xs px-2.5 py-1 rounded-lg border border-emerald-500/30 font-medium">
               ✓ Printable PDF Cheatsheets

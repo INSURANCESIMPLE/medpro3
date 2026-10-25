@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Phone, CheckCircle2, ShieldCheck, User, Mail, MapPin, Send, Calendar } from 'lucide-react';
+import { X, Phone, CheckCircle2, ShieldCheck, User, Mail, MapPin, Send } from 'lucide-react';
 
 interface AdvisorModalProps {
   isOpen: boolean;
@@ -8,6 +8,7 @@ interface AdvisorModalProps {
 
 export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) => {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -20,9 +21,33 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const targetEmail = 'jason@medicare-professor.com';
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      await fetch('/api/request-consultation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          phone: formData.phone,
+          email: formData.email,
+          zipCode: formData.zipCode,
+          turning65Soon: formData.turning65Soon,
+          notes: formData.notes,
+        }),
+      });
+    } catch (err) {
+      console.warn('Consultation request API notification fallback', err);
+    } finally {
+      setIsSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   const handleReset = () => {
@@ -51,13 +76,11 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
               100% Free Service
             </span>
             <a
-              href="https://scheduler.zoom.us/Medicare-professor"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="tel:5617707957"
               className="bg-blue-800/80 hover:bg-blue-800 text-amber-300 font-bold text-[11px] px-2.5 py-0.5 rounded-full border border-blue-700/60 flex items-center gap-1 transition-colors whitespace-nowrap shrink-0"
             >
-              <Calendar className="w-3 h-3 text-amber-300 shrink-0" />
-              <span>Schedule Direct Consultation</span>
+              <Phone className="w-3 h-3 text-amber-300 shrink-0" />
+              <span>Call Direct: <span className="whitespace-nowrap font-extrabold">(561) 770-7957</span></span>
             </a>
           </div>
 
@@ -82,12 +105,18 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
               </h3>
 
               <p className="text-sm text-slate-600 max-w-sm mx-auto">
-                Thank you, <strong>{formData.fullName || 'Senior Friend'}</strong>. A licensed Medicare Professor advisor will call you shortly at <strong>{formData.phone || '(561) 770-7957'}</strong>.
+                Thank you, <strong>{formData.fullName || 'Senior Friend'}</strong>. Your consultation request has been sent to <strong>{targetEmail}</strong>. A licensed Medicare Professor advisor will call you shortly at <strong>{formData.phone || '(561) 770-7957'}</strong>.
               </p>
 
-              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-1">
+              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-1.5 text-left">
+                <div className="flex items-center justify-between pb-1 border-b border-slate-200 font-bold text-slate-800">
+                  <span>Advisor Routing</span>
+                  <span className="font-mono text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                    {targetEmail}
+                  </span>
+                </div>
                 <div>✓ Zero obligation & zero fees ever</div>
-                <div>✓ Unbiased rate comparison across top carriers</div>
+                <div>✓ Direct carrier comparison by Jason York & Licensed Staff</div>
               </div>
 
               <button
@@ -184,15 +213,25 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 min-h-[48px]"
+                  disabled={isSubmitting}
+                  className="w-full py-3.5 bg-blue-700 hover:bg-blue-800 disabled:opacity-75 text-white font-extrabold text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 min-h-[48px]"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>Request Free Advisor Phone Call</span>
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      <span>Submitting to jason@medicare-professor.com...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      <span>Request Free Advisor Phone Call</span>
+                    </>
+                  )}
                 </button>
               </div>
 
               <p className="text-[11px] text-slate-400 text-center leading-tight">
-                By submitting, you agree to be contacted by a licensed Medicare insurance agent. Your information is strictly confidential.
+                By submitting, you agree to be contacted by licensed advisor Jason York (jason@medicare-professor.com). Your information is strictly confidential.
               </p>
             </form>
           )}

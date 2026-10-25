@@ -52,7 +52,7 @@ export const Hero: React.FC<HeroProps> = ({
 
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
           
-          {/* Top Row Badges: Phone Call-out & 2026 Guidance Badge */}
+          {/* Top Row Badges: Phone Call-out & 2027 Guidance Badge */}
           <div className="flex flex-wrap items-center justify-center gap-3">
             <button
               onClick={onOpenAdvisorModal}
@@ -68,7 +68,7 @@ export const Hero: React.FC<HeroProps> = ({
 
             <div className="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3.5 py-2 rounded-full text-xs font-bold text-slate-300 shadow-sm backdrop-blur-md min-h-[42px]">
               <GraduationCap className="w-4 h-4 text-amber-400 shrink-0" />
-              <span>2026 Updated Medicare Guidance</span>
+              <span>2027 Updated Medicare Guidance</span>
             </div>
           </div>
 
@@ -78,7 +78,7 @@ export const Hero: React.FC<HeroProps> = ({
           </h1>
 
           <p className="text-slate-300 text-sm sm:text-lg max-w-2xl mx-auto font-medium leading-relaxed">
-            Unbiased 2026 Medicare Advantage, Supplement (Medigap), and Part D guidance. Access 1-page cheatsheets & comparison guides. We also cover you with Life and Retirement products at{' '}
+            Unbiased 2027 Medicare Advantage, Supplement (Medigap), and Part D guidance. Access 1-page cheatsheets & comparison guides. We also cover you with Life and Retirement products at{' '}
             <a 
               href={INSURANCE_SIMPLIFIED_INFO.url} 
               target="_blank" 
@@ -150,7 +150,7 @@ export const Hero: React.FC<HeroProps> = ({
               </span>
             </div>
             <h3 className="text-xl font-black">
-              2026 Resource Hub
+              2027 Resource Hub
             </h3>
             <p className="text-xs text-emerald-100 leading-relaxed font-medium">
               Instant access to 1-page printable cheatsheets, enrollment guides, and FAQs.
@@ -201,7 +201,7 @@ export const Hero: React.FC<HeroProps> = ({
               <Search className="w-5 h-5 text-blue-700" />
             </div>
             <h3 className="text-xl font-bold">
-              Compare 2026 Plans
+              Compare 2027 Plans
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
               Filter Medicare Advantage, Medigap Plan G/N, and Part D standalone drug plans.
