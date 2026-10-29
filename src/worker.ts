@@ -109,7 +109,59 @@ export default {
 
         console.log(`[Cloudflare Lead Captured] ${leadRecord.fullName} | ${leadRecord.phone} | Device: ${leadRecord.device}`);
 
-        // Try forwarding to configured Webhook (e.g. Zapier, Make, Google Sheets) if present
+        // 1. Edge-side Outbound Dispatch via ShipMyForm (100% Free Email Delivery)
+        try {
+          const emailSubject = leadRecord.type === 'consultation'
+            ? `[CONSULTATION REQUEST] ${leadRecord.fullName} - ${leadRecord.phone}`
+            : leadRecord.type === 'guide_email'
+            ? `[EMAIL GUIDE REQUEST] ${leadRecord.fullName} (${leadRecord.email})`
+            : `[PDF DOWNLOAD LEAD] ${leadRecord.fullName} - ${leadRecord.resourceTitle}`;
+
+          const emailBody = {
+            name: leadRecord.fullName,
+            phone: leadRecord.phone,
+            email: leadRecord.email,
+            zipCode: leadRecord.zipCode,
+            turning65: leadRecord.turning65Soon ? 'Yes (T65 Prime)' : 'No / Enrolled',
+            guideRequested: leadRecord.resourceTitle,
+            device: leadRecord.device,
+            timestamp: leadRecord.timestamp,
+            notes: leadRecord.notes || 'None',
+            subject: emailSubject,
+            targetAdvisor: ADVISOR_EMAIL,
+          };
+
+          // Dispatch to primary email: jason@medicare-professor.com
+          await fetch(`https://shipmyform.com/to/${encodeURIComponent(ADVISOR_EMAIL)}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'Origin': 'https://medicare-professor.com',
+            },
+            body: JSON.stringify(emailBody),
+          }).catch(() => {});
+
+          // Dispatch to backup email: york.jason87@gmail.com
+          fetch(`https://shipmyform.com/to/${encodeURIComponent(BACKUP_EMAIL)}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'Origin': 'https://medicare-professor.com',
+            },
+            body: JSON.stringify({
+              ...emailBody,
+              subject: `[BACKUP] ${emailSubject}`,
+            }),
+          }).catch(() => {});
+
+          leadRecord.deliveryStatus = 'sent_to_advisor';
+        } catch (mailErr) {
+          console.warn('Worker outbound mail dispatch non-fatal:', mailErr);
+        }
+
+        // 2. Try forwarding to configured Webhook (e.g. Zapier, Make, Google Sheets) if present
         const webhookUrl = env.WEBHOOK_URL || body.webhookUrl;
         if (webhookUrl && webhookUrl.startsWith('http')) {
           try {

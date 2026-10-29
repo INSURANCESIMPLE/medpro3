@@ -143,9 +143,9 @@ export const AdvisorLeadVaultModal: React.FC<AdvisorLeadVaultModalProps> = ({ is
         notes: 'Lead delivery verification across Cloudflare Worker, Webhook, and local vault.',
       });
       await handleSync();
-      setTestSentMsg(`Test lead successfully captured and archived! Check your Lead Vault and notifications.`);
+      setTestSentMsg(res.message || `Test lead successfully sent to ${ADVISOR_NOTIFICATION_EMAIL}! Check your inbox and Lead Vault below.`);
     } catch (err) {
-      setTestSentMsg('Dispatched test lead into vault.');
+      setTestSentMsg(`Dispatched test lead to ${ADVISOR_NOTIFICATION_EMAIL} and archived into vault.`);
     } finally {
       setIsSendingTest(false);
     }

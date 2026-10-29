@@ -114,6 +114,18 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             <button
+              onClick={() => handleNavClick('schedule')}
+              className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1.5 ${
+                activeTab === 'schedule' 
+                  ? 'bg-blue-600 text-white font-bold shadow-xs' 
+                  : 'text-slate-600 hover:text-blue-700 hover:bg-blue-50 font-semibold'
+              }`}
+            >
+              <Calendar className="w-4 h-4 text-blue-500" />
+              Schedule
+            </button>
+
+            <button
               onClick={() => handleNavClick('timeline')}
               className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1.5 ${
                 activeTab === 'timeline' 
@@ -272,6 +284,29 @@ export const Header: React.FC<HeaderProps> = ({
                   <h4 className="font-extrabold text-sm text-slate-900">3. Resource Hub</h4>
                   <p className="text-xs text-slate-500 leading-snug">
                     Downloadable Medicare Cheatsheets, FAQs & Strategy Guides.
+                  </p>
+                </div>
+              </button>
+
+              {/* Schedule Consultation Tab */}
+              <button
+                onClick={() => handleNavClick('schedule')}
+                className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between space-y-2 ${
+                  activeTab === 'schedule'
+                    ? 'bg-blue-50/90 border-blue-500/60 ring-2 ring-blue-500/20 shadow-xs'
+                    : 'bg-slate-50 border-slate-200 hover:bg-slate-100/80 hover:border-slate-300'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <Calendar className="w-5 h-5 text-blue-600" />
+                  <span className="text-[10px] font-black uppercase tracking-wider text-blue-800 bg-blue-100/80 px-2 py-0.5 rounded-full">
+                    Online Booking
+                  </span>
+                </div>
+                <div>
+                  <h4 className="font-extrabold text-sm text-slate-900">4. Schedule</h4>
+                  <p className="text-xs text-slate-500 leading-snug">
+                    Book a free Medicare consultation directly on our calendar.
                   </p>
                 </div>
               </button>

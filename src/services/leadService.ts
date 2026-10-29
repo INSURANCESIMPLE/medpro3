@@ -329,7 +329,86 @@ export async function submitLeadNotification(leadData: {
     }
   }
 
-  // 5. Channel D: FormSubmit fallback (in case their server recovers)
+  // 4. Channel C: Primary Free Email Relay - ShipMyForm (100% Free, Zero Signup, Works on Cloudflare & Mobile)
+  try {
+    const shipMyFormPayload = {
+      name: leadRecord.fullName,
+      phone: leadRecord.phone,
+      email: leadRecord.email,
+      zipCode: leadRecord.zipCode,
+      turning65: leadRecord.turning65Soon ? 'Yes (Prime T65 Enrollment)' : 'No / Enrolled',
+      guideRequested: leadRecord.resourceTitle,
+      submissionType: payload.submissionType,
+      device: leadRecord.device || deviceType,
+      timestamp: readableDate,
+      notes: leadRecord.notes || 'None',
+      subject: payload._subject,
+      targetAdvisor: ADVISOR_NOTIFICATION_EMAIL,
+    };
+
+    // Send to primary email: jason@medicare-professor.com
+    const shipRes1 = await fetch(`https://shipmyform.com/to/${encodeURIComponent(ADVISOR_NOTIFICATION_EMAIL)}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify(shipMyFormPayload),
+    });
+
+    if (shipRes1.ok) {
+      dispatchedSuccessfully = true;
+      leadRecord.deliveryStatus = 'sent_to_advisor';
+      saveLeadToVault(leadRecord);
+    }
+
+    // Also dispatch to backup email: york.jason87@gmail.com
+    fetch(`https://shipmyform.com/to/${encodeURIComponent(ADVISOR_BACKUP_EMAIL)}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        ...shipMyFormPayload,
+        subject: `[BACKUP] ${payload._subject}`,
+      }),
+    }).catch(() => {});
+  } catch (shipErr) {
+    console.warn('ShipMyForm primary dispatch non-fatal:', shipErr);
+  }
+
+  // 5. Channel D: Secondary Free Email Relay - 000Form (Zero-cost fallback)
+  try {
+    const oooFormUrl = `https://000form.com/f/${encodeURIComponent(ADVISOR_NOTIFICATION_EMAIL)}`;
+    const oooFormData = new URLSearchParams();
+    oooFormData.append('name', leadRecord.fullName);
+    oooFormData.append('phone', leadRecord.phone);
+    oooFormData.append('email', leadRecord.email);
+    oooFormData.append('zipCode', leadRecord.zipCode);
+    oooFormData.append('resourceTitle', leadRecord.resourceTitle);
+    oooFormData.append('device', leadRecord.device || deviceType);
+    oooFormData.append('_subject', payload._subject);
+
+    const oooRes = await fetch(oooFormUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json',
+      },
+      body: oooFormData.toString(),
+    });
+
+    if (oooRes.ok) {
+      dispatchedSuccessfully = true;
+      leadRecord.deliveryStatus = 'sent_to_advisor';
+      saveLeadToVault(leadRecord);
+    }
+  } catch (oooErr) {
+    console.warn('000Form secondary dispatch non-fatal:', oooErr);
+  }
+
+  // 6. Channel E: FormSubmit fallback (in case their server recovers from 521 outage)
   try {
     const fsUrl = `https://formsubmit.co/ajax/${encodeURIComponent(ADVISOR_NOTIFICATION_EMAIL)}`;
     const fsResponse = await fetch(fsUrl, {

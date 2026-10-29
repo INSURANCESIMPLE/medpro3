@@ -78,6 +78,11 @@ export const Footer: React.FC<FooterProps> = ({
                 </button>
               </li>
               <li>
+                <button onClick={() => setActiveTab('schedule')} className="hover:text-blue-300 font-bold transition-colors flex items-center gap-1 text-blue-200">
+                  📅 Schedule Consultation
+                </button>
+              </li>
+              <li>
                 <button onClick={() => setActiveTab('timeline')} className="hover:text-white transition-colors">
                   Turning 65 IEP Roadmap
                 </button>

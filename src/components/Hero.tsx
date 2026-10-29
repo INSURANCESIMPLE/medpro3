@@ -66,6 +66,14 @@ export const Hero: React.FC<HeroProps> = ({
               </span>
             </button>
 
+            <button
+              onClick={() => setActiveTab('schedule')}
+              className="inline-flex items-center justify-center gap-2 bg-emerald-600/90 hover:bg-emerald-500 text-white border border-emerald-400/40 px-3.5 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all cursor-pointer min-h-[42px]"
+            >
+              <Calendar className="w-4 h-4 text-emerald-200" />
+              <span>Schedule Online</span>
+            </button>
+
             <div className="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3.5 py-2 rounded-full text-xs font-bold text-slate-300 shadow-sm backdrop-blur-md min-h-[42px]">
               <GraduationCap className="w-4 h-4 text-amber-400 shrink-0" />
               <span>2027 Updated Medicare Guidance</span>
