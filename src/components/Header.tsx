@@ -24,9 +24,11 @@ interface HeaderProps {
   onOpenInsuranceModal: () => void;
   onOpenAdvisorModal: () => void;
   onOpenQRCodeModal: () => void;
+  onOpenLeadVault?: () => void;
   isMobilePreviewMode: boolean;
   setIsMobilePreviewMode: (val: boolean | ((prev: boolean) => boolean)) => void;
 }
+
 
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
@@ -34,6 +36,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenInsuranceModal,
   onOpenAdvisorModal,
   onOpenQRCodeModal,
+  onOpenLeadVault,
   isMobilePreviewMode,
   setIsMobilePreviewMode,
 }) => {
@@ -351,9 +354,29 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* Secondary Services & Quick Actions */}
-            <div className="pt-3 border-t border-slate-100 grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div className="pt-3 border-t border-slate-100 grid grid-cols-1 md:grid-cols-4 gap-3">
               
-              {/* Insurance Simplified Network Card */}
+              {/* Advisor Lead Vault Button */}
+              {onOpenLeadVault && (
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenLeadVault();
+                  }}
+                  className="p-3 bg-emerald-50/90 rounded-xl border border-emerald-200 text-slate-900 flex items-center justify-between gap-3 text-left hover:bg-emerald-100/80 transition-colors cursor-pointer"
+                >
+                  <div className="space-y-0.5">
+                    <span className="text-[10px] font-extrabold text-emerald-900 uppercase tracking-wider flex items-center gap-1">
+                      Advisor Tools
+                    </span>
+                    <h5 className="text-xs font-black text-slate-900">Lead Vault &amp; Sync</h5>
+                    <p className="text-[11px] text-slate-600">Mobile captures &amp; alerts.</p>
+                  </div>
+                  <span className="px-3 py-1.5 bg-emerald-700 text-white font-bold text-xs rounded-lg shrink-0">
+                    Open
+                  </span>
+                </button>
+              )}
               <div className="p-3 bg-amber-50/90 rounded-xl border border-amber-200 text-slate-900 flex items-center justify-between gap-3">
                 <div className="space-y-0.5">
                   <span className="text-[10px] font-extrabold text-amber-900 uppercase tracking-wider flex items-center gap-1">

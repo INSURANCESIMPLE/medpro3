@@ -34,6 +34,7 @@ export default function App() {
         onOpenInsuranceModal={() => setIsInsuranceModalOpen(true)}
         onOpenAdvisorModal={() => setIsAdvisorModalOpen(true)}
         onOpenQRCodeModal={() => setIsQRCodeModalOpen(true)}
+        onOpenLeadVault={() => setIsLeadVaultOpen(true)}
         isMobilePreviewMode={isMobilePreviewMode}
         setIsMobilePreviewMode={setIsMobilePreviewMode}
       />

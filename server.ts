@@ -84,12 +84,24 @@ async function startServer() {
           zipCode: zipCode ? String(zipCode).trim() : 'Not provided',
           turning65Soon: Boolean(turning65Soon),
           resourceTitle: resourceTitle ? String(resourceTitle).trim() : '2027 Medicare Comprehensive Guide',
+          device: /mobile|iphone|android|ipad/i.test(req.headers['user-agent'] || '') ? 'Mobile Phone' : 'Desktop Browser',
         },
         timestamp: new Date().toISOString(),
         emailSentStatus: 'Dispatched to jason@medicare-professor.com',
       };
 
+      if (req.body.webhookUrl && typeof req.body.webhookUrl === 'string' && req.body.webhookUrl.startsWith('http')) {
+        try {
+          fetch(req.body.webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ event: 'new_medicare_lead', submission }),
+          }).catch(() => {});
+        } catch (_) {}
+      }
+
       leadSubmissions.unshift(submission);
+
 
       console.log('====================================================');
       console.log(`[NEW PDF REQUEST SENT TO ${ADVISOR_EMAIL}]`);
